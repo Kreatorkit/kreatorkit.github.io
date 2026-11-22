@@ -216,6 +216,10 @@ td.dash{color:#A39D92;font-weight:700;font-size:14px}.nb{color:var(--soft);font-
 .seats b{color:var(--coral);font-size:20px}.seats i{display:inline-block;width:140px;height:8px;border-radius:99px;background:#444;overflow:hidden}.seats i b{display:block;height:100%;background:var(--coral)}
 .plan .inr s{opacity:.8}
 .seats[hidden]{display:none}
+.phone.live .screen,.view.live{padding:0}
+.phone.live iframe,.view.live iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+.view.live{inset:0}
+
 /* v3 grown-up look (22 Nov 2026): ink + coral, Hanken Grotesk, hairlines, small radii */
 h1,h2,h3{font-weight:700;letter-spacing:-.035em}
 .hero h1{font-weight:800;letter-spacing:-.045em}
@@ -279,18 +283,10 @@ nav{background:rgba(250,250,249,.88)}
   <div class="fine"><span class="seatline">Founding price for the first 100 creators</span> &middot; 0% commission &middot; cancel any time</div>
  </div>
  <div class="stage">
-  <div class="phone" aria-label="Example: a creator's Kreatorkit page"><div class="screen">
-   <div class="pg seq">
-    <div class="pghead" style="animation-delay:.1s"><span class="av big" style="background:var(--coral)"></span><b>Maya Makes</b><small>Editing tips for creators</small></div>
-    <div class="pgcard klass" style="animation-delay:.5s"><span class="kick">Free live class &middot; Sat 7 PM</span><b>Edit a reel in 10 minutes</b><span class="pbtn">Save my seat</span></div>
-    <div class="pgcard" style="animation-delay:.9s"><span class="kick">My picks</span>
-     <div class="picks"><span><i style="background:var(--sage)"></i>Mic<small>Buy on Amazon</small></span><span><i style="background:var(--mustard)"></i>Light<small>Buy on Amazon</small></span></div></div>
-    <div class="pgcard dark" style="animation-delay:1.3s"><span class="kick">Course &middot; 6 lessons</span><b>Reels that sell</b><span class="pbtn">Buy for ₹1,999</span></div>
-    <div class="pgcard" style="animation-delay:1.7s"><b style="font-size:14px">Get my free guide</b><span class="mail">you@email.com</span></div>
-   </div></div></div>
+  <div class="phone live" aria-label="A real example page made with Kreatorkit"><div class="screen"><iframe src="https://app.kreatorkit.app/p/demo/start" title="Example page: Maya Makes" loading="eager"></iframe></div></div>
   <div class="float" style="left:-34px;top:60px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>New sign-up</div>
   <div class="float" style="right:-14px;bottom:130px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Sale, 0% fee</div>
-  <div class="ex">Example page</div>
+  <div class="ex">A real Kreatorkit page (example account)</div>
  </div>
 </div></header>
 
@@ -329,27 +325,13 @@ nav{background:rgba(250,250,249,.88)}
  <p class="lead">Tap through.</p>
  <div class="tgrid">
   <div class="list" role="tablist" aria-label="Kreatorkit features">
-   <button class="it" role="tab" aria-selected="true" data-v="0"><span class="n">1</span><span><h3>Your page and picks</h3><p>Links, guides and the products you use. Amazon and YouTube links open in their apps, not Instagram's browser.</p></span></button>
+   <button class="it" role="tab" aria-selected="true" data-v="0"><span class="n">1</span><span><h3>Your picks</h3><p>Links, guides and the products you use. Amazon and YouTube links open in their apps, not Instagram's browser.</p></span></button>
    <button class="it" role="tab" aria-selected="false" data-v="1"><span class="n">2</span><span><h3>Free class sign-up</h3><p>They sign up with email, get the join link and add it to their calendar. Their phone reminds them.</p></span></button>
    <button class="it" role="tab" aria-selected="false" data-v="2"><span class="n">3</span><span><h3>Courses with lessons</h3><p>They pay you directly and get a private course page with every video, note and file.</p></span></button>
   </div>
   <div class="tphone"><div class="tscr">
-   <div class="view on" data-view="0">
-    <span class="chip" style="background:var(--coral);color:#fff;align-self:flex-start">From the reel</span>
-    <h4>My editing kit</h4>
-    <div class="vcard"><b>Wireless mic</b><small>Buy on Amazon &middot; opens the app</small></div>
-    <div class="vcard"><b>Ring light</b><small>Buy on Amazon</small></div>
-    <div class="vcard"><b>Full tutorial</b><small>Opens in YouTube</small></div>
-    <div class="tag">Some links are affiliate links</div>
-   </div>
-   <div class="view" data-view="1">
-    <span class="chip" style="background:var(--cream);align-self:flex-start">Sat, 7:00 PM IST &middot; 60 min</span>
-    <h4>Edit a reel in 10 minutes</h4>
-    <div class="b me">You're in!</div>
-    <div class="vbtns"><span style="background:var(--coral);color:#fff">Join link</span></div>
-    <div class="vbtns"><span style="background:#fff">Google Calendar</span><span style="background:#fff">Phone calendar</span></div>
-    <div class="tag">Reminder 15 minutes before</div>
-   </div>
+   <div class="view on live" data-view="0"><iframe src="https://app.kreatorkit.app/p/demo/editing-kit" title="Example page: my editing kit" loading="lazy"></iframe></div>
+   <div class="view live" data-view="1"><iframe src="https://app.kreatorkit.app/p/demo/free-class" title="Example page: free live class" loading="lazy"></iframe></div>
    <div class="view" data-view="2">
     <span class="chip" style="background:var(--black);color:var(--cream);align-self:flex-start">Your course</span>
     <h4>Reels that sell</h4>
