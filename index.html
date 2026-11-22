@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kreatorkit: turn every comment into a follower</title>
+<title>Kreatorkit: your link-in-bio that sells</title>
 <link rel="icon" href="icon-192.png">
-<meta property="og:title" content="Kreatorkit: turn every comment into a follower">
+<meta property="og:title" content="Kreatorkit: your link-in-bio that sells">
 <meta property="og:image" content="logo-dark.png">
-<meta name="description" content="Comment to DM, a follow gate and guide pages for Instagram creators. Founding price $19 a month, 0% fees on your sales.">
+<meta name="description" content="Link-in-bio pages, picks, email list, free classes and courses for creators. 0% commission on your sales. Free for 30 days.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -196,86 +196,119 @@ footer small{opacity:.6;font-weight:700}
  .phone,.tphone{width:300px;height:580px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.seq>*{opacity:1;transform:none}}
+
+/* v2: creator page mock, coming-soon, seats */
+.pg{padding:16px 14px;display:flex;flex-direction:column;gap:10px}
+.pghead{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 0 4px}.pghead .av.big{width:56px;height:56px}
+.pghead b{font:600 18px Fredoka}.pghead small{color:var(--soft);font-weight:700;font-size:12px}
+.pgcard{background:#fff;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px;box-shadow:0 6px 16px -10px rgba(0,0,0,.3)}
+.pgcard .kick{font:800 10.5px Nunito;letter-spacing:.05em;text-transform:uppercase;color:var(--coral)}
+.pgcard b{font:600 16px/1.15 Fredoka}
+.pgcard .pbtn{background:var(--coral);color:#fff;border-radius:999px;text-align:center;font-weight:800;font-size:13px;padding:8px}
+.pgcard.dark{background:var(--black);color:var(--cream)}.pgcard.dark .kick{color:var(--mustard)}
+.picks{display:flex;gap:8px}.picks span{flex:1;display:flex;flex-direction:column;font-weight:800;font-size:12.5px;gap:3px}
+.picks i{height:46px;border-radius:9px;display:block}.picks small{color:var(--soft);font-size:11px}
+.pgcard .mail{border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;color:#A39D92;font-size:12.5px}
+.t.soon{background:transparent;box-shadow:inset 0 0 0 2px var(--line)}.t.soon h3{color:var(--soft)}
+.soonpill{display:inline-block;background:#F3E2B8;color:#7A5A12;border-radius:999px;padding:3px 10px;font:800 12px Nunito}
+td.dash{color:#A39D92;font-weight:700;font-size:14px}.nb{color:var(--soft);font-weight:700}
+.seats{display:inline-flex;align-items:center;gap:12px;background:var(--black);color:var(--cream);border-radius:999px;padding:10px 18px;font-weight:800;margin-top:22px}
+.seats b{color:var(--coral);font-size:20px}.seats i{display:inline-block;width:140px;height:8px;border-radius:99px;background:#444;overflow:hidden}.seats i b{display:block;height:100%;background:var(--coral)}
+.plan .inr s{opacity:.8}
+.seats[hidden]{display:none}
+.problem .in{grid-template-columns:1fr 480px}
+.ln .price{white-space:nowrap}
+@media (max-width:900px){.problem .in{grid-template-columns:1fr}.seats{flex-wrap:wrap;justify-content:center}}
 </style></head><body>
 
 <nav id="nav"><div class="in">
  <a class="logo" href="#" aria-label="Kreatorkit home">Kreat<span class="o"></span>r<b>kit</b></a>
- <div class="links"><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="https://app.kreatorkit.app/login">Log in</a><a class="btn main" href="#join">Join the founding list</a></div>
+ <div class="links"><a href="#how">How it works</a><a href="#compare">Compare</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="https://app.kreatorkit.app/login">Log in</a><a class="btn main" href="https://app.kreatorkit.app/signup">Start free</a></div>
 </div></nav>
 
 <header class="hero"><div class="in">
  <div>
-  <h1>Turn every comment into a <em>follower</em>.</h1>
-  <p class="lead">Someone comments your word on a reel. Kreatorkit checks they follow you, then sends your guide straight to their DMs.</p>
-  <div class="ctas"><a class="btn main" href="#join">Join the founding list
+  <h1>Your link-in-bio that <em>sells</em>.</h1>
+  <p class="lead">One page for everything you share: your links, your picks, your email list, your free classes and your courses. Kreatorkit takes 0% of what you sell.</p>
+  <div class="ctas"><a class="btn main" href="https://app.kreatorkit.app/signup">Try it free for 30 days
    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-   <a class="link" href="#how">See how it works</a></div>
-  <div class="fine">Founding price $19 a month. 0% fees on your sales.</div>
+   <a class="link" href="#pricing">See pricing</a></div>
+  <div class="fine"><span class="seatline">Founding price for the first 100 creators</span> &middot; 0% commission &middot; cancel any time</div>
  </div>
  <div class="stage">
-  <div class="phone" aria-label="Example: a comment becomes a DM with a guide page"><div class="screen">
-   <div class="bar"><span class="av" style="background:var(--coral)"></span>maya.makes</div>
-   <div class="msgs seq">
-    <div class="tag" style="animation-delay:.2s">Comment on your reel</div>
-    <div class="c" style="animation-delay:.5s"><span class="av" style="background:var(--sage)"></span><p><small>maya.makes</small>GUIDE</p></div>
-    <div class="tag" style="animation-delay:1s">In her DMs</div>
-    <div class="b me" style="animation-delay:1.3s">Follow me first, then tap the button and the guide is yours.</div>
-    <div class="qr" style="animation-delay:1.9s">I followed</div>
-    <div class="b me" style="animation-delay:2.4s">Here's everything from the reel.</div>
-    <div class="gcard" style="animation-delay:2.8s"><div class="img">3 free tools for editing</div><div class="t">Your guide page<span>kreatorkit.app/you/editing</span></div></div>
+  <div class="phone" aria-label="Example: a creator's Kreatorkit page"><div class="screen">
+   <div class="pg seq">
+    <div class="pghead" style="animation-delay:.1s"><span class="av big" style="background:var(--coral)"></span><b>Maya Makes</b><small>Editing tips for creators</small></div>
+    <div class="pgcard klass" style="animation-delay:.5s"><span class="kick">Free live class &middot; Sat 7 PM</span><b>Edit a reel in 10 minutes</b><span class="pbtn">Save my seat</span></div>
+    <div class="pgcard" style="animation-delay:.9s"><span class="kick">My picks</span>
+     <div class="picks"><span><i style="background:var(--sage)"></i>Mic<small>Buy on Amazon</small></span><span><i style="background:var(--mustard)"></i>Light<small>Buy on Amazon</small></span></div></div>
+    <div class="pgcard dark" style="animation-delay:1.3s"><span class="kick">Course &middot; 6 lessons</span><b>Reels that sell</b><span class="pbtn">Buy for ₹1,999</span></div>
+    <div class="pgcard" style="animation-delay:1.7s"><b style="font-size:14px">Get my free guide</b><span class="mail">you@email.com</span></div>
    </div></div></div>
-  <div class="float" style="left:-34px;top:40px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>New follower</div>
-  <div class="float" style="right:-14px;bottom:110px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Guide sent</div>
-  <div class="ex">Example account</div>
+  <div class="float" style="left:-34px;top:60px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>New sign-up</div>
+  <div class="float" style="right:-14px;bottom:130px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Sale, 0% fee</div>
+  <div class="ex">Example page</div>
  </div>
 </div></header>
 
 <section class="how" id="how"><div class="in">
- <h2>Comments in. Followers out.</h2>
+ <h2>Bio link in. Customers out.</h2>
  <div class="flow">
-  <div class="step"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-   <h3>They comment</h3><p>Your word, under any reel you pick.</p></div>
+  <div class="step"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+   <h3>Make your page</h3><p>Start from an example. Add links, picks, a class or a course.</p></div>
+  <svg class="arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  <div class="step"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+   <h3>Put it in your bio</h3><p>Instagram, YouTube, anywhere. One link.</p></div>
   <svg class="arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
   <div class="step"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-   <h3>They follow</h3><p>The DM asks first, then checks.</p></div>
-  <svg class="arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-  <div class="step"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
-   <h3>They get your guide</h3><p>A page with every link and command.</p></div>
+   <h3>Grow and earn</h3><p>Emails, class seats and sales. All yours, 0% taken.</p></div>
+ </div>
+</div></section>
+
+<section class="problem"><div class="in">
+ <div><h2>Others take a cut of every sale.</h2>
+  <p class="lead">Your course makes ₹50,000 this month. On a 10% platform you give away thousands. On Kreatorkit Pro you pay one flat price and keep the rest.</p></div>
+ <div>
+  <div class="receipt">
+   <h3>₹50,000 of course sales</h3><div class="sm">One month, before the payment company's fee</div>
+   <div class="ln"><span><b>Topmate</b><small>10% + gateway (their example: ₹1,000 sale, you keep ₹880)</small></span><span class="price">you keep ~₹44,000</span></div>
+   <div class="kk"><span><b>Kreatorkit Pro</b><small>0% of sales, ₹999/month founding price</small></span><span class="price">~₹49,000</span></div>
+  </div>
+  <div class="verify">From topmate.io/fees, checked 23 Nov 2026. The payment company's own fee (cards, UPI) applies on every platform, including ours.</div>
  </div>
 </div></section>
 
 <section class="tour" id="tour"><div class="in">
  <h2>What your followers see</h2>
- <p class="lead">Tap through the three parts.</p>
+ <p class="lead">Tap through.</p>
  <div class="tgrid">
   <div class="list" role="tablist" aria-label="Kreatorkit features">
-   <button class="it" role="tab" aria-selected="true" data-v="0"><span class="n">1</span><span><h3>Comment to DM, around the clock</h3><p>Pick a word for each reel. Everyone who comments it gets a public reply and your DM, even at 3 a.m.</p></span></button>
-   <button class="it" role="tab" aria-selected="false" data-v="1"><span class="n">2</span><span><h3>Follow gate</h3><p>Your guide goes to people who follow you. They tap "I followed" and it arrives.</p></span></button>
-   <button class="it" role="tab" aria-selected="false" data-v="2"><span class="n">3</span><span><h3>Guide pages</h3><p>Every link and command from the reel on one page, with "Copy all" and "Share" buttons.</p></span></button>
+   <button class="it" role="tab" aria-selected="true" data-v="0"><span class="n">1</span><span><h3>Your page and picks</h3><p>Links, guides and the products you use. Amazon and YouTube links open in their apps, not Instagram's browser.</p></span></button>
+   <button class="it" role="tab" aria-selected="false" data-v="1"><span class="n">2</span><span><h3>Free class sign-up</h3><p>They sign up with email, get the join link and add it to their calendar. Their phone reminds them.</p></span></button>
+   <button class="it" role="tab" aria-selected="false" data-v="2"><span class="n">3</span><span><h3>Courses with lessons</h3><p>They pay you directly and get a private course page with every video, note and file.</p></span></button>
   </div>
   <div class="tphone"><div class="tscr">
    <div class="view on" data-view="0">
-    <span class="chip" style="background:var(--cream);align-self:flex-start">Comments</span>
-    <div class="c"><span class="av" style="background:var(--sage)"></span><p><small>dev.rahul</small>GUIDE</p></div>
-    <div class="c"><span class="av" style="background:var(--black)"></span><p><small>you</small>Sent it to your DMs, dev.rahul</p></div>
-    <div class="c"><span class="av" style="background:var(--coral)"></span><p><small>sana.edits</small>guide please</p></div>
-    <div class="c"><span class="av" style="background:var(--black)"></span><p><small>you</small>Check your messages</p></div>
-    <div class="tag">Every reply sent by Kreatorkit</div>
+    <span class="chip" style="background:var(--coral);color:#fff;align-self:flex-start">From the reel</span>
+    <h4>My editing kit</h4>
+    <div class="vcard"><b>Wireless mic</b><small>Buy on Amazon &middot; opens the app</small></div>
+    <div class="vcard"><b>Ring light</b><small>Buy on Amazon</small></div>
+    <div class="vcard"><b>Full tutorial</b><small>Opens in YouTube</small></div>
+    <div class="tag">Some links are affiliate links</div>
    </div>
    <div class="view" data-view="1">
-    <span class="chip" style="background:var(--cream);align-self:flex-start">DMs</span>
-    <div class="b me">Follow me first, then tap the button and the guide is yours.</div>
-    <div class="qr">I followed</div>
-    <div class="tag">Checked with Instagram</div>
-    <div class="b me">Thanks for following. Here's everything from the reel.</div>
+    <span class="chip" style="background:var(--cream);align-self:flex-start">Sat, 7:00 PM IST &middot; 60 min</span>
+    <h4>Edit a reel in 10 minutes</h4>
+    <div class="b me">You're in!</div>
+    <div class="vbtns"><span style="background:var(--coral);color:#fff">Join link</span></div>
+    <div class="vbtns"><span style="background:#fff">Google Calendar</span><span style="background:#fff">Phone calendar</span></div>
+    <div class="tag">Reminder 15 minutes before</div>
    </div>
    <div class="view" data-view="2">
-    <span class="chip" style="background:var(--coral);color:#fff;align-self:flex-start">From the reel</span>
-    <h4>3 free tools for editing</h4>
-    <div class="vbtns"><span style="background:var(--coral);color:#fff">Copy all links</span><span style="background:#fff">Share</span></div>
-    <div class="vcard"><b>Auto-Editor</b><small>Cuts silences for you</small></div>
-    <div class="vcard"><b>LosslessCut</b><small>Trim without losing quality</small></div>
-    <div class="vcard"><b>Postiz</b><small>Post everywhere at once</small></div>
+    <span class="chip" style="background:var(--black);color:var(--cream);align-self:flex-start">Your course</span>
+    <h4>Reels that sell</h4>
+    <div class="vcard" style="padding:0;overflow:hidden"><span style="display:block;height:110px;background:#111"></span><b style="padding:10px 14px 0">1. Welcome</b><small style="padding:0 14px 10px;display:block">Video lesson</small></div>
+    <div class="vcard"><b>2. Your first hook</b><small>Notes + worksheet.pdf</small></div>
    </div>
   </div></div>
  </div>
@@ -283,77 +316,97 @@ footer small{opacity:.6;font-weight:700}
 
 <section class="extras"><div class="in">
  <h2>And the rest of the kit</h2>
- <p class="lead">Everything else a creator pays separate apps for.</p>
+ <p class="lead">The things creators usually pay three separate apps for.</p>
  <div class="bento">
-  <div class="t w3 dark"><h3>Link in bio made of your reels</h3><p>Your reel covers as a grid. Each tap opens that reel's guide.</p>
-   <div class="ui tiles"><span style="background:var(--coral)"></span><span style="background:var(--cream)"></span><span style="background:var(--sage)"></span><span style="background:var(--mustard)"></span></div></div>
-  <div class="t w3"><h3>Sell with 0% fees</h3><p>Course and guide pages that use your own Razorpay or Stripe link. We take nothing from your sales.</p><div class="ui"><span class="chip" style="background:var(--black);color:var(--cream)">0% fee</span></div></div>
-  <div class="t w2"><h3>Smart YouTube links</h3><p>Links that open your video in the YouTube app instead of Instagram's browser.</p></div>
-  <div class="t w2"><h3>Picks page</h3><p>Your favourite tools or products on one page people can shop from.</p></div>
-  <div class="t w2"><h3>See what works</h3><p>Comments, follows and clicks for each reel.</p><div class="ui bars" aria-hidden="true"><span style="height:40%"></span><span style="height:65%"></span><span style="height:50%"></span><span style="height:90%"></span><span style="height:70%"></span></div></div>
+  <div class="t w3 dark"><h3>Your audience, not the algorithm's</h3><p>Collect emails, add a WhatsApp community button and download your list any time. If an app bans you tomorrow, your people stay with you.</p>
+   <div class="ui"><span class="chip" style="background:var(--coral);color:#fff">Email list</span> <span class="chip" style="background:#25D366;color:#fff">WhatsApp</span></div></div>
+  <div class="t w3"><h3>Sell with 0% commission</h3><p>Files and full courses. Buyers pay into your own payment account and get a private download or course page.</p><div class="ui"><span class="chip" style="background:var(--black);color:var(--cream)">0% fee</span></div></div>
+  <div class="t w2"><h3>Smart links</h3><p>YouTube, Spotify and Amazon links that open the app, with tap stats by source and device.</p></div>
+  <div class="t w2"><h3>Schedule + calendar</h3><p>Schedule YouTube videos and Shorts. See your month and drag posts to move them.</p></div>
+  <div class="t w2"><h3>Works with AI</h3><p>Use Kreatorkit from Claude and other AI tools with our API and MCP.</p></div>
+  <div class="t w3 soon"><h3>Coming: Instagram comment to DM</h3><p>Someone comments your word, they follow, they get your page in their DMs. Built and waiting on Meta's approval. Founding members get it at no extra cost.</p></div>
+  <div class="t w3 soon"><h3>Coming: selling in India</h3><p>UPI and Indian cards for your products and courses. Selling works abroad today with Stripe.</p></div>
  </div>
 </div></section>
 
+<section class="compare" id="compare"><div class="in">
+ <h2>How Kreatorkit compares</h2>
+ <p class="lead">Each tool at the plan you need for these features, from their own pricing pages.</p>
+ <div class="tablewrap"><table>
+  <tr><th></th><th class="kc">Kreatorkit<small>Pro, founding</small></th><th>Linktree<small>Premium</small></th><th>Stan Store<small>Creator Pro</small></th><th>Beacons<small>Creator Plus</small></th><th>ManyChat<small>Pro</small></th><th>Topmate<small>No plan</small></th></tr>
+  <tr><td>Price per month</td><td class="kc"><b class="price">₹999 / $19</b></td><td class="price">₹1,450</td><td class="price">$99</td><td class="price">$30</td><td class="price">$39</td><td class="price">₹0</td></tr>
+  <tr><td>Commission on your sales</td><td class="kc"><b>0%</b></td><td>0% <small class="nb">(Pro and up)</small></td><td class="dash">not stated</td><td class="dash">not shown</td><td class="dash">no store</td><td>10% + gateway</td></tr>
+  <tr><td>Link-in-bio page</td><td class="kc"><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td class="dash">no</td><td>Profile page</td></tr>
+  <tr><td>Courses</td><td class="kc"><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td class="dash">no</td><td class="dash">not checked</td></tr>
+  <tr><td>Email list</td><td class="kc"><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td class="dash">not checked</td><td class="dash">not checked</td></tr>
+  <tr><td>Free class sign-up + calendar reminder</td><td class="kc"><span class="y">✓</span></td><td class="dash">not checked</td><td>Webinars</td><td class="dash">not checked</td><td class="dash">no</td><td class="dash">not checked</td></tr>
+  <tr><td>Instagram comment to DM</td><td class="kc"><span class="soonpill">Coming</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td class="dash">no</td></tr>
+  <tr><td>Follow before you get the link</td><td class="kc"><span class="soonpill">Coming</span></td><td class="dash">not checked</td><td class="dash">not checked</td><td class="dash">not checked</td><td class="dash">not checked</td><td class="dash">no</td></tr>
+ </table></div>
+ <div class="verify">Checked 23 Nov 2026 on linktr.ee/s/pricing (India prices, monthly), stan.store, beacons.ai, manychat.com/pricing (monthly) and topmate.io/fees. "Not checked" means we couldn't confirm it on their page.</div>
+</div></section>
+
 <section class="pricing" id="pricing"><div class="in">
- <h2>Start free. Upgrade when the comments pour in.</h2>
- <p class="lead">Every plan takes 0% of what you sell.</p>
- <div class="toggle" role="group" aria-label="Billing period"><button aria-pressed="true" data-bill="m">Monthly</button><button aria-pressed="false" data-bill="y">Yearly, 2 months free</button></div>
+ <h2>Try it free for 30 days.</h2>
+ <p class="lead">Founding price for the first 100 creators, locked for as long as you stay.</p>
+ <div class="seats" id="seats" hidden><b id="seatsleft">100</b> of 100 founding seats left<i><b id="seatsbar" style="width:0%"></b></i></div>
+ <div class="toggle" role="group" aria-label="Currency"><button aria-pressed="true" data-cur="inr">₹ India</button><button aria-pressed="false" data-cur="usd">$ Everywhere else</button></div>
  <div class="plans">
-  <div class="plan"><div><h3>Free</h3><div class="who">To try it on one reel</div></div>
-   <div class="p price">$0</div>
+  <div class="plan"><div><h3>Free</h3><div class="who">To try it</div></div>
+   <div class="p price"><span data-inr="₹0" data-usd="$0">₹0</span></div>
    <ul>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1 Instagram account</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Comment to DM, up to 200 a month</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Guide pages and link in bio</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Picks page, up to 25 items</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>2 pages, 5 smart links</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Email list up to 100 people</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free class sign-ups</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>5 scheduled posts a month</li>
     <li style="color:var(--soft)">Small "Made with Kreatorkit" badge</li>
-   </ul><a class="btn line" href="#join">Join the list</a></div>
-  <div class="plan hot"><div><span class="ribbon">Founding price</span><h3 style="margin-top:12px">Creator</h3><div class="who">For creators posting every week</div></div>
-   <div><div class="p price"><span data-m="$19" data-y="$190">$19</span> <small data-m="/ month" data-y="/ year">/ month</small></div><div class="inr" data-m="Rs 1,499 a month in India" data-y="Rs 14,990 a year in India">Rs 1,499 a month in India</div></div>
+   </ul><a class="btn line" href="https://app.kreatorkit.app/signup">Start free</a></div>
+  <div class="plan"><div><span class="ribbon">Founding price</span><h3 style="margin-top:12px">Creator</h3><div class="who">For your page, list and classes</div></div>
+   <div><div class="p price"><span data-inr="₹299" data-usd="$7">₹299</span> <small>/ month</small></div><div class="inr"><s data-inr="₹499" data-usd="$9">₹499</s> after the founding seats are gone</div></div>
    <ul>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Everything in Free, and:</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unlimited DMs, sent the moment they comment</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Follow gate</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>2 Instagram accounts</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Your colours, logo and domain, no badge</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Stats for every reel</li>
-   </ul><a class="btn main" href="#join">Join at the founding price</a></div>
-  <div class="plan"><div><h3>Pro</h3><div class="who">For teams and several brands</div></div>
-   <div><div class="p price"><span data-m="$49" data-y="$490">$49</span> <small data-m="/ month" data-y="/ year">/ month</small></div><div class="inr" data-m="Rs 3,999 a month in India" data-y="Rs 39,990 a year in India">Rs 3,999 a month in India</div></div>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unlimited pages, picks and smart links</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unlimited email list + download</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free classes with calendar reminders</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unlimited YouTube scheduling + calendar</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full stats, no badge</li>
+    <li style="color:var(--soft)">Coming, free for you: Instagram comment to DM, follow gate, Instagram scheduling</li>
+   </ul><a class="btn main" href="https://app.kreatorkit.app/signup">Try free for 30 days</a></div>
+  <div class="plan hot"><div><span class="ribbon">Founding price</span><h3 style="margin-top:12px">Pro</h3><div class="who">For creators who sell</div></div>
+   <div><div class="p price"><span data-inr="₹999" data-usd="$19">₹999</span> <small>/ month</small></div><div class="inr"><s data-inr="₹1,499" data-usd="$29">₹1,499</s> after the founding seats are gone</div></div>
    <ul>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Everything in Creator, and:</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>5 Instagram accounts</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full design control, no trace of Kreatorkit</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Watch up to 10 creators, weekly report</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Reminder emails and list export</li>
-   </ul><a class="btn line" href="#join">Join the list</a></div>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Everything in Creator</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Sell files and courses, 0% commission</b></li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Private course pages with video lessons</li>
+    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>API + AI tools (Claude, MCP)</li>
+    <li style="color:#CFC8BC">Coming: selling in India (UPI, cards)</li>
+   </ul><a class="btn main" href="https://app.kreatorkit.app/signup">Try free for 30 days</a></div>
  </div>
- <div class="below"><span>0% fees</span> on your sales, on every plan.</div>
+ <div class="below">Add card or UPI autopay. Nothing is charged for 30 days. <span>Cancel before and pay nothing.</span></div>
 </div></section>
 
 <section class="faq" id="faq"><div class="in">
  <h2>You asked. We answered.</h2>
  <div class="chat">
-  <div class="qq">Is this allowed by Instagram?</div>
-  <div class="aa">Yes. We use Instagram's official API from Meta, and you connect with Meta's own login.</div>
-  <div class="qq">Why is it this cheap?</div>
-  <div class="aa">We built it for our own Instagram accounts first. $19 is the founding price, and founding creators help decide what we build next.</div>
-  <div class="qq">Do people really have to follow me?</div>
-  <div class="aa">Only if you switch on the follow gate. They follow, tap "I followed", and your guide arrives.</div>
-  <div class="qq">Does my computer need to stay on?</div>
-  <div class="aa">No. Kreatorkit runs online, so replies go out while you sleep.</div>
   <div class="qq">Do you take a cut of my sales?</div>
-  <div class="aa">No. You sell with your own payment link and keep all of it, on every plan.</div>
-  <div class="qq">What about YouTube?</div>
-  <div class="aa">Smart YouTube links are part of the kit. Posting your reels to YouTube Shorts is on the way.</div>
+  <div class="aa">No. Kreatorkit takes 0%. Buyers pay into your own payment account. The payment company's own fee (cards, UPI) applies, as it does everywhere.</div>
+  <div class="qq">Why do you ask for a card for a free trial?</div>
+  <div class="aa">So your founding price is locked and nothing stops on day 31. You see a reminder before the first charge, and you can cancel from your Plan page any time before it, for nothing.</div>
+  <div class="qq">When does Instagram comment to DM arrive?</div>
+  <div class="aa">It's built and waiting on Meta's approval for our app. We can't promise Meta's timing. Founding members get it at no extra cost the day it switches on.</div>
+  <div class="qq">Can I sell from India?</div>
+  <div class="aa">Selling works today with Stripe for creators outside India. UPI and Indian cards are next. Your pages, list, classes and scheduling work everywhere now.</div>
+  <div class="qq">What happens after 100 founding seats?</div>
+  <div class="aa">New creators pay the normal price (₹499 / ₹1,499). Founding members keep their price for as long as they stay subscribed.</div>
+  <div class="qq">Is my data safe?</div>
+  <div class="aa">We use the official Instagram, YouTube and payment APIs, store keys encrypted, and never sell data. You can delete everything from Settings.</div>
  </div>
 </div></section>
 
 <section class="final" id="join"><div class="in">
  <div class="box">
-  <h2>Your next reel deserves the follow.</h2>
-  <p>Join the founding list. $19 a month when we open, 0% fees always.</p>
-  <a class="btn main" href="mailto:kreatorkit.app@gmail.com?subject=Founding%20list&amp;body=Add%20me%20to%20the%20Kreatorkit%20founding%20list.%20My%20Instagram%3A%20">Join the founding list</a><div class="formnote">Opens your email app. Or write to kreatorkit.app@gmail.com. One email when we open. Nothing else.</div>
+  <h2>Your bio link should pay you.</h2>
+  <p>Try every feature free for 30 days. Founding price for the first 100.</p>
+  <a class="btn main" href="https://app.kreatorkit.app/signup">Start free</a>
  </div>
 </div></section>
 
@@ -361,21 +414,26 @@ footer small{opacity:.6;font-weight:700}
  <a class="logo" href="#" style="color:var(--cream)">Kreat<span class="o"></span>r<b>kit</b></a>
  <div class="links"><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="https://app.kreatorkit.app/login">Log in</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="data-deletion.html">Data deletion</a></div>
  <small>© 2026 Kreatorkit · ABHIRAM.K, India</small>
- <p style="flex-basis:100%;margin:8px 0 0;font-size:13px;opacity:.7;max-width:80ch">Kreatorkit uses YouTube API Services and Meta's official Instagram APIs. Kreatorkit's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" style="text-decoration:underline">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+ <p style="flex-basis:100%;margin:8px 0 0;font-size:13px;opacity:.7;max-width:80ch">Kreatorkit uses YouTube API Services and Meta's official Instagram APIs. Kreatorkit's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" style="text-decoration:underline">Google API Services User Data Policy</a>, including the Limited Use requirements. Linktree, Stan, Beacons, ManyChat and Topmate are trademarks of their owners; prices are from their public pages on the date shown.</p>
 </div></footer>
 
 <script>
-// sticky nav border
 const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10),{passive:true});
-// tour tabs
 const tabs=[...document.querySelectorAll('.it')],views=[...document.querySelectorAll('.view')];
 function show(i){tabs.forEach((t,k)=>t.setAttribute('aria-selected',k===i));views.forEach((v,k)=>v.classList.toggle('on',k===i));}
 tabs.forEach((t,i)=>t.addEventListener('click',()=>{show(i);auto=false}));
 let auto=true,cur=0;setInterval(()=>{if(auto){cur=(cur+1)%tabs.length;show(cur)}},4200);
-// pricing toggle
+// currency toggle
 document.querySelectorAll('.toggle button').forEach(b=>b.addEventListener('click',()=>{
  document.querySelectorAll('.toggle button').forEach(x=>x.setAttribute('aria-pressed',x===b));
- const k=b.dataset.bill;document.querySelectorAll('[data-m]').forEach(el=>el.textContent=el.dataset[k]);
+ const k=b.dataset.cur;document.querySelectorAll('[data-inr]').forEach(el=>el.textContent=el.dataset[k]);
 }));
+try{ if(!(Intl.DateTimeFormat().resolvedOptions().timeZone||'').startsWith('Asia/Calcutta')&&!(Intl.DateTimeFormat().resolvedOptions().timeZone||'').startsWith('Asia/Kolkata')) document.querySelector('[data-cur="usd"]').click(); }catch(e){}
+// live founding counter
+fetch('https://app.kreatorkit.app/founding.json').then(r=>r.json()).then(j=>{
+ if(typeof j.left!=='number')return; const s=document.getElementById('seats');
+ document.getElementById('seatsleft').textContent=j.left; document.getElementById('seatsbar').style.width=(100*(j.of-j.left)/j.of)+'%';
+ s.hidden=false; document.querySelectorAll('.seatline').forEach(e=>e.textContent=j.left+' of '+j.of+' founding seats left');
+}).catch(()=>{});
 </script>
 </body></html>
