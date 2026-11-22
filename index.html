@@ -216,6 +216,14 @@ td.dash{color:#A39D92;font-weight:700;font-size:14px}.nb{color:var(--soft);font-
 .seats b{color:var(--coral);font-size:20px}.seats i{display:inline-block;width:140px;height:8px;border-radius:99px;background:#444;overflow:hidden}.seats i b{display:block;height:100%;background:var(--coral)}
 .plan .inr s{opacity:.8}
 .seats[hidden]{display:none}
+.calc .amt{display:flex;align-items:center;gap:6px;background:#fff;border-radius:14px;padding:6px 14px;margin:8px 0 10px;box-shadow:inset 0 0 0 2px var(--line)}
+.calc .amt span{font:600 30px Fredoka}.calc .amt input{all:unset;font:600 30px Fredoka;width:100%;min-width:0}
+.calc .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.calc .chips button{all:unset;cursor:pointer;font:800 13px Nunito;border-radius:999px;padding:6px 12px;background:var(--cream)}
+.calc .chips button:hover{background:#E6DFD3}
+.calc .price.bad{color:var(--coral-d);font:600 26px Fredoka}
+.calc label.sm{display:block;margin:4px 0 0}
+
 .problem .in{grid-template-columns:1fr 480px}
 .ln .price{white-space:nowrap}
 @media (max-width:900px){.problem .in{grid-template-columns:1fr}.seats{flex-wrap:wrap;justify-content:center}}
@@ -266,15 +274,18 @@ td.dash{color:#A39D92;font-weight:700;font-size:14px}.nb{color:var(--soft);font-
 </div></section>
 
 <section class="problem"><div class="in">
- <div><h2>Others take a cut of every sale.</h2>
-  <p class="lead">Your course makes ₹50,000 this month. On a 10% platform you give away thousands. On Kreatorkit Pro you pay one flat price and keep the rest.</p></div>
+ <div><h2>We take nothing from your sales.</h2>
+  <p class="lead">Other platforms take a percentage of every sale, so the more you sell, the more you pay them. Kreatorkit is one flat monthly plan. Every rupee your buyers pay goes to you.</p></div>
  <div>
-  <div class="receipt">
-   <h3>₹50,000 of course sales</h3><div class="sm">One month, before the payment company's fee</div>
-   <div class="ln"><span><b>Topmate</b><small>10% + gateway (their example: ₹1,000 sale, you keep ₹880)</small></span><span class="price">you keep ~₹44,000</span></div>
-   <div class="kk"><span><b>Kreatorkit Pro</b><small>0% of sales, ₹999/month founding price</small></span><span class="price">~₹49,000</span></div>
+  <div class="receipt calc">
+   <h3>Taken from your sales</h3>
+   <label class="sm" for="sales">If your course sells this much in a month:</label>
+   <div class="amt"><span>₹</span><input id="sales" type="text" inputmode="numeric" value="50,000" aria-label="Your monthly sales in rupees"></div>
+   <div class="chips"><button type="button" data-v="10000">₹10k</button><button type="button" data-v="50000">₹50k</button><button type="button" data-v="200000">₹2 lakh</button><button type="button" data-v="500000">₹5 lakh</button></div>
+   <div class="ln"><span><b>Topmate</b><small>10% commission on every sale</small></span><span class="price bad" id="tm">₹5,000</span></div>
+   <div class="kk"><span><b>Kreatorkit</b><small>0% commission. Your plan is a flat ₹999/month, whatever you sell.</small></span><span class="price">₹0</span></div>
   </div>
-  <div class="verify">From topmate.io/fees, checked 23 Nov 2026. The payment company's own fee (cards, UPI) applies on every platform, including ours.</div>
+  <div class="verify">Topmate's 10% is from topmate.io/fees (checked 23 Nov 2026). The payment company's own fee (cards, UPI) applies on every platform, including ours, so it's left out of both.</div>
  </div>
 </div></section>
 
@@ -388,7 +399,7 @@ td.dash{color:#A39D92;font-weight:700;font-size:14px}.nb{color:var(--soft);font-
  <h2>You asked. We answered.</h2>
  <div class="chat">
   <div class="qq">Do you take a cut of my sales?</div>
-  <div class="aa">No. Kreatorkit takes 0%. Buyers pay into your own payment account. The payment company's own fee (cards, UPI) applies, as it does everywhere.</div>
+  <div class="aa">No. We take nothing from your sales. You pay a flat monthly plan, and buyers pay straight into your own payment account. The payment company's own fee (cards, UPI) applies, as it does everywhere.</div>
   <div class="qq">Why do you ask for a card for a free trial?</div>
   <div class="aa">So your founding price is locked and nothing stops on day 31. You see a reminder before the first charge, and you can cancel from your Plan page any time before it, for nothing.</div>
   <div class="qq">When does Instagram comment to DM arrive?</div>
@@ -429,6 +440,13 @@ document.querySelectorAll('.toggle button').forEach(b=>b.addEventListener('click
  const k=b.dataset.cur;document.querySelectorAll('[data-inr]').forEach(el=>el.textContent=el.dataset[k]);
 }));
 try{ if(!(Intl.DateTimeFormat().resolvedOptions().timeZone||'').startsWith('Asia/Calcutta')&&!(Intl.DateTimeFormat().resolvedOptions().timeZone||'').startsWith('Asia/Kolkata')) document.querySelector('[data-cur="usd"]').click(); }catch(e){}
+// sales calculator: what each platform takes from your sales
+(function(){ const i=document.getElementById('sales'), tm=document.getElementById('tm'); if(!i) return;
+ const fmt=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+ const run=()=>{ const v=Math.max(0,+i.value.replace(/[^0-9]/g,'')||0); tm.textContent=fmt(v*0.10); };
+ i.addEventListener('input',()=>{ const v=+i.value.replace(/[^0-9]/g,'')||0; i.value=v?v.toLocaleString('en-IN'):''; run(); });
+ document.querySelectorAll('.calc .chips button').forEach(b=>b.onclick=()=>{ i.value=(+b.dataset.v).toLocaleString('en-IN'); run(); });
+ run(); })();
 // live founding counter
 fetch('https://app.kreatorkit.app/founding.json').then(r=>r.json()).then(j=>{
  if(typeof j.left!=='number')return; const s=document.getElementById('seats');
