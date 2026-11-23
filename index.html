@@ -409,6 +409,60 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
 .lb figcaption{font-weight:800;font-size:16px;color:var(--inkv)}.lb figcaption small{display:block;color:var(--softv);font-weight:600;font-size:13px}
 @media (max-width:600px){.lb-ph{width:210px;height:424px;border-radius:34px}.lb-sc{border-radius:25px}.lb-belt{gap:24px;animation-duration:40s}@keyframes lbBelt{to{transform:translateX(calc(-50% - 12px))}}}
 @media (prefers-reduced-motion:reduce){.lb-belt{animation:none}.lb-rail{overflow-x:auto}}
+
+/* ===== Rest of the kit: bento with live demos (24 Nov) ===== */
+.kit2{text-align:center}.kit2 .lead{margin:0 auto 40px}
+.kt-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;text-align:left}
+.kt{border:1px solid var(--glass-b);background:var(--glass);border-radius:18px;padding:14px 14px 22px;display:flex;flex-direction:column;gap:12px;color:var(--inkv);
+ transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.kt:hover{transform:translateY(-3px);box-shadow:0 18px 34px -24px rgba(0,0,0,.4)}
+.kt h3{margin:4px 4px 0;font-size:20px}.kt p{margin:0 4px;color:var(--softv);font-size:15px;line-height:1.45}
+.kt-w3{grid-column:span 3}.kt-w2{grid-column:span 2}
+.kt-soon{border-style:dashed;background:transparent}
+@media (max-width:860px){.kt-grid{grid-template-columns:1fr}.kt-w3,.kt-w2{grid-column:auto}}
+.kd{--kio:cubic-bezier(.65,0,.35,1);--kout:cubic-bezier(.16,1,.3,1);--kc:var(--bgv);position:relative;height:150px;border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;
+ background:color-mix(in srgb,var(--inkv) 5%,var(--bgv));color:var(--inkv)}
+.kd-pill{display:inline-flex;align-items:center;gap:6px;border-radius:99px;padding:6px 11px;font-weight:800;font-size:12px;background:var(--kc);border:1px solid var(--glass-b);white-space:nowrap}
+.kd-soon{position:absolute;top:10px;left:10px;background:var(--inkv);color:var(--bgv);border-radius:99px;padding:3px 9px;font-weight:800;font-size:11px}
+.kd-rows{display:flex;flex-direction:column;gap:5px;width:58%}
+.kd-r{display:flex;align-items:center;gap:8px;background:var(--kc);border-radius:8px;padding:6px 9px;font-size:12px;font-weight:700;opacity:0;animation:kdRow 8s var(--kout) infinite}
+.kd-r i{width:16px;height:16px;border-radius:50%;background:color-mix(in srgb,var(--inkv) 14%,var(--bgv));flex:none}
+.kd-r:nth-child(2){animation-delay:.6s}.kd-r:nth-child(3){animation-delay:1.2s}
+@keyframes kdRow{0%{opacity:0;transform:translateY(-8px)}6%,85%{opacity:1;transform:none}95%,100%{opacity:0}}
+.kd-side{display:flex;flex-direction:column;gap:6px;margin-left:10px}
+.kd-wa{background:#25D366;color:#fff;border-color:#25D366;animation:kdPulse 2.4s ease-in-out infinite}
+@keyframes kdPulse{50%{box-shadow:0 0 0 6px rgba(37,211,102,.2)}}
+.kd-sell{gap:10px}
+.kd-card{background:var(--kc);border-radius:10px;padding:9px 11px;font-size:12px;font-weight:700;width:120px}.kd-card b{display:block;font-size:13px}.kd-card small{color:var(--softv)}
+.kd-flow{position:relative;width:54px;height:2px;background:var(--glass-b)}
+.kd-flow u{position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:var(--sage);animation:kdCoin 2.6s var(--kio) infinite}
+@keyframes kdCoin{0%{left:0;opacity:0}15%,85%{opacity:1}100%{left:42px;opacity:0}}
+.kd-fee{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-weight:800;font-size:12px;color:var(--sage)}
+.kd-lk{position:relative}
+.kd-tap{position:absolute;right:-6px;bottom:-8px;width:26px;height:26px;border-radius:50%;background:rgba(12,12,12,.25);border:2px solid #fff;opacity:0;animation:kdTap 4s var(--kout) infinite}
+@keyframes kdTap{0%,20%{opacity:0;transform:scale(1.5)}28%{opacity:1;transform:scale(1)}34%{transform:scale(.8)}42%,100%{opacity:0}}
+.kd-app{position:absolute;right:14px;top:14px;background:#FF0000;color:#fff;border-color:#FF0000;opacity:0;animation:kdApp 4s var(--kout) infinite}
+@keyframes kdApp{0%,36%{opacity:0;transform:translateY(8px) scale(.9)}44%,88%{opacity:1;transform:none}100%{opacity:0}}
+.kd-bars{position:absolute;left:14px;bottom:12px;display:flex;align-items:flex-end;gap:5px;height:40px}
+.kd-bars i{width:10px;border-radius:3px 3px 0 0;background:var(--inkv);animation:kdGrow 4s var(--kout) infinite}
+.kd-bars i:nth-child(1){--h:60%}.kd-bars i:nth-child(2){--h:95%;background:var(--coral)}.kd-bars i:nth-child(3){--h:40%}
+@keyframes kdGrow{0%,40%{height:10%}55%,100%{height:var(--h)}}
+.kd-grid{display:grid;grid-template-columns:repeat(7,22px);gap:4px;position:relative}
+.kd-grid i{height:22px;border-radius:5px;background:var(--kc)}
+.kd-post{position:absolute;width:22px;height:22px;border-radius:5px;background:linear-gradient(135deg,#D9573F,#7A2E22);left:0;top:0;animation:kdDrag 5s var(--kio) infinite}
+@keyframes kdDrag{0%,15%{transform:translate(52px,26px)}25%{transform:translate(52px,22px) scale(1.25);box-shadow:0 10px 16px -6px rgba(0,0,0,.45)}55%{transform:translate(130px,48px) scale(1.25);box-shadow:0 10px 16px -6px rgba(0,0,0,.45)}65%,100%{transform:translate(130px,52px) scale(1)}}
+.kd-ai{flex-direction:column;gap:7px;align-items:stretch;padding:0 14px}
+.kd-b{border-radius:12px;padding:7px 10px;font-size:12px;font-weight:700;max-width:88%;opacity:0;animation:kdBub 7s var(--kout) infinite}
+.kd-u{align-self:flex-end;background:var(--inkv);color:var(--bgv)}
+.kd-tl{align-self:flex-start;font-family:ui-monospace,Consolas,monospace;font-weight:500;font-size:11px;background:var(--kc);border:1px dashed var(--glass-b);animation-delay:1.2s}
+.kd-a{align-self:flex-start;background:var(--kc);animation-delay:2.2s}
+@keyframes kdBub{0%{opacity:0;transform:translateY(6px)}6%,85%{opacity:1;transform:none}95%,100%{opacity:0}}
+.kd-dm{gap:12px}
+.kd-cm{background:var(--kc);border-radius:10px;padding:7px 10px;font-size:12px;font-weight:700}.kd-cm b{color:var(--coral)}
+.kd-ar{width:30px;height:2px;background:var(--softv);position:relative;opacity:.5}.kd-ar::after{content:"";position:absolute;right:-1px;top:-4px;border-left:7px solid var(--softv);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.kd-msg{background:linear-gradient(135deg,#8E44AD,#D9573F);color:#fff;border-radius:12px 12px 12px 4px;padding:7px 10px;font-size:12px;font-weight:700;opacity:0;animation:kdBub 5s var(--kout) infinite;animation-delay:1s}
+.kd-in{gap:8px;flex-wrap:wrap;padding:0 20px}.kd-in .kd-pill{opacity:.6}
+@media (prefers-reduced-motion:reduce){.kd *{animation:none!important}.kd-r,.kd-b,.kd-msg{opacity:1}.kd-bars i{height:var(--h)}}
 </style></head><body>
 <div class="blobs" aria-hidden="true"><i class="bb1"></i><i class="bb2"></i><i class="bb3"></i></div>
 <div class="themebtn" role="group" aria-label="Look"><button type="button" data-t="light" aria-pressed="true">White</button><button type="button" data-t="dark" aria-pressed="false">Black</button></div>
@@ -476,18 +530,17 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
  <div class="lb-rail"><div class="lb-belt"><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/clean.png" alt="Example page in the Clean look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Clean<small>Light and simple</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/store.png" alt="Example page in the Storefront look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Storefront<small>Photo grid for picks</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/guide.png" alt="Example page in the Human Edge look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Human Edge<small>Cream and red</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/list.png" alt="Example page in the List look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>List<small>Dark, numbered cards</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/qamcp.png" alt="Example page in the QAmcp look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>QAmcp<small>Dark, rose, certificate</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/reels.png" alt="Example page in the Daily reels look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Daily reels<small>Black, big words</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/clean.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Clean<small>Light and simple</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/store.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Storefront<small>Photo grid for picks</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/guide.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Human Edge<small>Cream and red</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/list.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>List<small>Dark, numbered cards</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/qamcp.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>QAmcp<small>Dark, rose, certificate</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/reels.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Daily reels<small>Black, big words</small></figcaption></figure></div></div>
 </section>
 
-<section class="extras"><div class="in">
+<section class="extras kit2"><div class="in">
  <h2>And the rest of the kit</h2>
  <p class="lead">The things creators usually pay three separate apps for.</p>
- <div class="bento">
-  <div class="t w3 dark"><h3>Your audience, not the algorithm's</h3><p>Collect emails, add a WhatsApp community button and download your list any time. If an app bans you tomorrow, your people stay with you.</p>
-   <div class="ui"><span class="chip" style="background:var(--coral);color:#fff">Email list</span> <span class="chip" style="background:#25D366;color:#fff">WhatsApp</span></div></div>
-  <div class="t w3"><h3>Sell with 0% commission</h3><p>Files and full courses. Buyers pay into your own payment account and get a private download or course page.</p><div class="ui"><span class="chip" style="background:var(--black);color:var(--cream)">0% fee</span></div></div>
-  <div class="t w2"><h3>Smart links</h3><p>YouTube, Spotify and Amazon links that open the app, with tap stats by source and device.</p></div>
-  <div class="t w2"><h3>Schedule + calendar</h3><p>Schedule YouTube videos and Shorts. See your month and drag posts to move them.</p></div>
-  <div class="t w2"><h3>Works with AI</h3><p>Use Kreatorkit from Claude and other AI tools with our API and MCP.</p></div>
-  <div class="t w3 soon"><h3>Coming: Instagram comment to DM</h3><p>Someone comments your word, they follow, they get your page in their DMs. Built and waiting on Meta's approval. Founding members get it at no extra cost.</p></div>
-  <div class="t w3 soon"><h3>Coming: selling in India</h3><p>UPI and Indian cards for your products and courses. Selling works abroad today with Stripe.</p></div>
+ <div class="kt-grid">
+  <div class="kt kt-w3 "><div aria-hidden="true"><div class="kd kd-aud"><div class="kd-rows"><div class="kd-r"><i></i>New sign-up</div><div class="kd-r"><i></i>New sign-up</div><div class="kd-r"><i></i>New sign-up</div></div><div class="kd-side"><span class="kd-pill">Download list</span><span class="kd-pill kd-wa">WhatsApp</span></div></div></div><h3>Your audience, not the algorithm's</h3><p>Collect emails, add a WhatsApp community button and download your list any time. If an app bans you tomorrow, your people stay with you.</p></div>
+  <div class="kt kt-w3 "><div aria-hidden="true"><div class="kd kd-sell"><div class="kd-card"><b>Reels that sell</b><small>Course</small></div><div class="kd-flow"><u></u></div><div class="kd-card"><b>Your account</b><small>Paid directly</small></div><div class="kd-fee">Kreatorkit fee: 0%</div></div></div><h3>Sell with 0% commission</h3><p>Files and full courses. Buyers pay into your own payment account and get a private download or course page.</p></div>
+  <div class="kt kt-w2 "><div aria-hidden="true"><div class="kd kd-link"><span class="kd-pill kd-lk">app.kreatorkit.app/l/new-video<span class="kd-tap"></span></span><span class="kd-pill kd-app">Opens in the YouTube app</span><div class="kd-bars"><i></i><i></i><i></i></div></div></div><h3>Smart links</h3><p>YouTube, Spotify and Amazon links that open the app, with tap stats by source and device.</p></div>
+  <div class="kt kt-w2 "><div aria-hidden="true"><div class="kd kd-cal"><div class="kd-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="kd-post"></span></div></div></div><h3>Schedule + calendar</h3><p>Schedule YouTube videos and Shorts. See your month and drag posts to move them.</p></div>
+  <div class="kt kt-w2 "><div aria-hidden="true"><div class="kd kd-ai"><span class="kd-b kd-u">Schedule my Short for Friday 9 AM</span><span class="kd-b kd-tl">kreatorkit · schedule_post</span><span class="kd-b kd-a">Done. It's on your calendar.</span></div></div><h3>Works with AI</h3><p>Use Kreatorkit from Claude and other AI tools with our API and MCP.</p></div>
+  <div class="kt kt-w3 kt-soon"><div aria-hidden="true"><div class="kd kd-dm"><span class="kd-soon">Coming</span><span class="kd-cm">Comment: <b>GUIDE</b></span><span class="kd-ar"></span><span class="kd-msg">Here's your guide</span></div></div><h3>Coming: Instagram comment to DM</h3><p>Someone comments your word, they follow, they get your page in their DMs. Built and waiting on Meta's approval. Founding members get it at no extra cost.</p></div>
+  <div class="kt kt-w3 kt-soon"><div aria-hidden="true"><div class="kd kd-in"><span class="kd-soon">Coming</span><span class="kd-pill">UPI</span><span class="kd-pill">RuPay</span><span class="kd-pill">Indian cards</span></div></div><h3>Coming: selling in India</h3><p>UPI and Indian cards for your products and courses. Selling works abroad today with Stripe.</p></div>
  </div>
 </div></section>
 
