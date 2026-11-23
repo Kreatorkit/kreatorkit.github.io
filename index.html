@@ -306,6 +306,35 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
 .themebtn button{all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;font:700 13px "Hanken Grotesk";color:var(--inkv)}
 .themebtn button[aria-pressed="true"]{background:var(--inkv);color:var(--bgv)}
 @media (prefers-reduced-motion:reduce){.blobs i,.badge4 i{animation:none}.reveal{opacity:1;transform:none}}
+
+/* ===== hero: fan of three real pages, screens cross-fade (option A, 23 Nov) ===== */
+.fan{height:660px;display:flex;align-items:center;justify-content:center}
+.fph{position:absolute;width:300px;height:604px;border-radius:44px;background:#111;padding:11px;display:block;text-decoration:none;
+ box-shadow:0 40px 70px -34px rgba(0,0,0,.55),0 8px 20px -10px rgba(0,0,0,.3)}
+.fsc{width:100%;height:100%;border-radius:34px;overflow:hidden;position:relative;background:#F5F6F8}
+.fsc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;animation:fx 18s ease-in-out infinite}
+.fph.pl{transform:translateX(-150px) rotate(-9deg) scale(.84);animation:fl 6s ease-in-out infinite}
+.fph.pr{transform:translateX(150px) rotate(9deg) scale(.84);animation:fr 6s ease-in-out infinite -3s}
+.fph.pc{z-index:2;animation:fc 6s ease-in-out infinite -1.5s}
+@keyframes fl{50%{transform:translateX(-150px) translateY(-12px) rotate(-9deg) scale(.84)}}
+@keyframes fr{50%{transform:translateX(150px) translateY(-12px) rotate(9deg) scale(.84)}}
+@keyframes fc{50%{transform:translateY(-10px)}}
+.pc .fsc img:nth-child(2),.fnote:nth-child(2){animation-delay:6s}
+.pc .fsc img:nth-child(3),.fnote:nth-child(3){animation-delay:12s}
+.pl .fsc img:nth-child(1){animation-delay:6s}.pl .fsc img:nth-child(2){animation-delay:12s}
+.pr .fsc img:nth-child(1){animation-delay:12s}.pr .fsc img:nth-child(3){animation-delay:6s}
+@keyframes fx{0%{opacity:0;transform:scale(1.02)}11%{opacity:1;transform:none}33.3%{opacity:1}44.3%{opacity:0}100%{opacity:0}}
+.fnotes{position:absolute;left:0;right:0;bottom:4px;height:46px;z-index:3}
+.fnote{position:absolute;left:0;right:0;margin:auto;width:max-content;display:flex;align-items:center;gap:8px;padding:11px 15px;border-radius:14px;
+ background:var(--bgv);border:1px solid var(--glass-b);color:var(--inkv);font-weight:700;font-size:14px;box-shadow:0 16px 32px -18px rgba(0,0,0,.45);
+ opacity:0;animation:fx 18s ease-in-out infinite}
+.fnote i{width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.fnote b{font-weight:800}.fnote b::after{content:" ·"}
+.fan .ex2{position:absolute;bottom:-26px;left:0;right:0;text-align:center;font:700 12px "Hanken Grotesk";color:var(--softv)}
+@media (max-width:980px){.fan{height:600px}.fph{width:270px;height:544px}.fph.pl{transform:translateX(-96px) rotate(-9deg) scale(.8)}.fph.pr{transform:translateX(96px) rotate(9deg) scale(.8)}
+ @keyframes fl{50%{transform:translateX(-96px) translateY(-10px) rotate(-9deg) scale(.8)}}@keyframes fr{50%{transform:translateX(96px) translateY(-10px) rotate(9deg) scale(.8)}}}
+@media (max-width:520px){.fph.pl,.fph.pr{display:none}}
+@media (prefers-reduced-motion:reduce){.fph{animation:none!important}.fsc img,.fnote{animation:none!important}.fsc img:first-child,.fnote:first-child{opacity:1}}
 </style></head><body>
 <div class="blobs" aria-hidden="true"><i class="bb1"></i><i class="bb2"></i><i class="bb3"></i></div>
 <div class="themebtn" role="group" aria-label="Look"><button type="button" data-t="light" aria-pressed="true">White</button><button type="button" data-t="dark" aria-pressed="false">Black</button></div>
@@ -325,11 +354,12 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
    <a class="link" href="#pricing">See pricing</a></div>
   <div class="fine"><span class="seatline">Founding price for the first 100 creators</span> &middot; 0% commission &middot; cancel any time</div>
  </div>
- <div class="stage">
-  <div class="phone live" aria-label="A real example page made with Kreatorkit"><div class="screen"><iframe src="https://app.kreatorkit.app/p/demo/start?embed=1" title="Example page: Maya Makes" loading="eager"></iframe></div></div>
-  <div class="float" style="left:-34px;top:60px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>New sign-up</div>
-  <div class="float" style="right:-14px;bottom:130px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Sale, 0% fee</div>
-  <div class="ex">A real Kreatorkit page (example account)</div>
+ <div class="stage fan" aria-label="Real example pages made with Kreatorkit: link in bio, shop my picks, free class">
+  <div class="fph pl" aria-hidden="true"><div class="fsc"><img src="hero/start.png" alt="" width="306" height="616" decoding="async"><img src="hero/editing-kit.png" alt="" width="306" height="616" decoding="async"><img src="hero/free-class.png" alt="" width="306" height="616" decoding="async"></div></div>
+  <a class="fph pc" href="https://app.kreatorkit.app/p/demo/start" target="_blank" rel="noopener" aria-label="Open a real example page"><div class="fsc"><img src="hero/start.png" alt="" width="306" height="616" decoding="async"><img src="hero/editing-kit.png" alt="" width="306" height="616" decoding="async"><img src="hero/free-class.png" alt="" width="306" height="616" decoding="async"></div></a>
+  <div class="fph pr" aria-hidden="true"><div class="fsc"><img src="hero/start.png" alt="" width="306" height="616" decoding="async"><img src="hero/editing-kit.png" alt="" width="306" height="616" decoding="async"><img src="hero/free-class.png" alt="" width="306" height="616" decoding="async"></div></div>
+  <div class="fnotes" aria-hidden="true"><span class="fnote"><i></i><b>Link in bio</b>New email sign-up</span><span class="fnote"><i></i><b>Shop my picks</b>Opens in the store's app</span><span class="fnote"><i></i><b>Free class</b>Reminder added to calendar</span></div>
+  <div class="ex2">Real Kreatorkit pages (example account)</div>
  </div>
 </div></header>
 
