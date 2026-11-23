@@ -394,6 +394,21 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
 .fb-row.ours .fb-bar{border-color:var(--sage)}
 .fb-src{text-align:center;max-width:640px;margin:24px auto 0}
 @media (max-width:560px){.fb-hd{flex-direction:column;gap:2px}.fb-hd small{display:block;margin:0}.fb-cut span{font-size:12px}}
+
+/* ===== What your followers see: looks belt (24 Nov) ===== */
+.lb{text-align:center}
+.lb .lead{margin:0 auto 34px}
+.lb-rail{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.lb-belt{display:flex;gap:40px;width:max-content;padding:10px 0 20px;animation:lbBelt 48s linear infinite}
+.lb-rail:hover .lb-belt{animation-play-state:paused}
+@keyframes lbBelt{to{transform:translateX(calc(-50% - 20px))}}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.lb-ph{width:260px;height:524px;border-radius:40px;background:#111;padding:10px;box-shadow:0 30px 50px -30px rgba(0,0,0,.55)}
+.lb-sc{width:100%;height:100%;border-radius:30px;overflow:hidden;background:#F5F6F8}
+.lb-sc img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.lb figcaption{font-weight:800;font-size:16px;color:var(--inkv)}.lb figcaption small{display:block;color:var(--softv);font-weight:600;font-size:13px}
+@media (max-width:600px){.lb-ph{width:210px;height:424px;border-radius:34px}.lb-sc{border-radius:25px}.lb-belt{gap:24px;animation-duration:40s}@keyframes lbBelt{to{transform:translateX(calc(-50% - 12px))}}}
+@media (prefers-reduced-motion:reduce){.lb-belt{animation:none}.lb-rail{overflow-x:auto}}
 </style></head><body>
 <div class="blobs" aria-hidden="true"><i class="bb1"></i><i class="bb2"></i><i class="bb3"></i></div>
 <div class="themebtn" role="group" aria-label="Look"><button type="button" data-t="light" aria-pressed="true">White</button><button type="button" data-t="dark" aria-pressed="false">Black</button></div>
@@ -454,27 +469,12 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
  <p class="verify fb-src">Topmate's 10% is from topmate.io/fees (checked 22 Nov 2026). Our plan is a flat ₹999/month, whatever you sell. The payment company's own fee (cards, UPI) applies on every platform, including ours, so it's left out of both.</p>
 </div></section>
 
-<section class="tour" id="tour"><div class="in">
+<section class="tour lb" id="tour"><div class="in">
  <h2>What your followers see</h2>
- <p class="lead">Tap through.</p>
- <div class="tgrid">
-  <div class="list" role="tablist" aria-label="Kreatorkit features">
-   <button class="it" role="tab" aria-selected="true" data-v="0"><span class="n">1</span><span><h3>Your picks</h3><p>Links, guides and the products you use. Amazon and YouTube links open in their apps, not Instagram's browser.</p></span></button>
-   <button class="it" role="tab" aria-selected="false" data-v="1"><span class="n">2</span><span><h3>Free class sign-up</h3><p>They sign up with email, get the join link and add it to their calendar. Their phone reminds them.</p></span></button>
-   <button class="it" role="tab" aria-selected="false" data-v="2"><span class="n">3</span><span><h3>Courses with lessons</h3><p>They pay you directly and get a private course page with every video, note and file.</p></span></button>
-  </div>
-  <div class="tphone"><div class="tscr">
-   <div class="view on live" data-view="0"><iframe src="https://app.kreatorkit.app/p/demo/editing-kit?embed=1" title="Example page: my editing kit" loading="lazy"></iframe></div>
-   <div class="view live" data-view="1"><iframe src="https://app.kreatorkit.app/p/demo/free-class?embed=1" title="Example page: free live class" loading="lazy"></iframe></div>
-   <div class="view" data-view="2">
-    <span class="chip" style="background:var(--black);color:var(--cream);align-self:flex-start">Your course</span>
-    <h4>Reels that sell</h4>
-    <div class="vcard" style="padding:0;overflow:hidden"><span style="display:block;height:110px;background:#111"></span><b style="padding:10px 14px 0">1. Welcome</b><small style="padding:0 14px 10px;display:block">Video lesson</small></div>
-    <div class="vcard"><b>2. Your first hook</b><small>Notes + worksheet.pdf</small></div>
-   </div>
-  </div></div>
- </div>
-</div></section>
+ <p class="lead">The same page in six looks. Pick one, change it any time.</p>
+</div>
+ <div class="lb-rail"><div class="lb-belt"><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/clean.png" alt="Example page in the Clean look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Clean<small>Light and simple</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/store.png" alt="Example page in the Storefront look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Storefront<small>Photo grid for picks</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/guide.png" alt="Example page in the Human Edge look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Human Edge<small>Cream and red</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/list.png" alt="Example page in the List look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>List<small>Dark, numbered cards</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/qamcp.png" alt="Example page in the QAmcp look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>QAmcp<small>Dark, rose, certificate</small></figcaption></figure><figure><div class="lb-ph"><div class="lb-sc"><img src="looks/reels.png" alt="Example page in the Daily reels look" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Daily reels<small>Black, big words</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/clean.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Clean<small>Light and simple</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/store.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Storefront<small>Photo grid for picks</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/guide.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Human Edge<small>Cream and red</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/list.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>List<small>Dark, numbered cards</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/qamcp.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>QAmcp<small>Dark, rose, certificate</small></figcaption></figure><figure aria-hidden="true"><div class="lb-ph"><div class="lb-sc"><img src="looks/reels.png" alt="" width="306" height="616" loading="lazy" decoding="async"></div></div><figcaption>Daily reels<small>Black, big words</small></figcaption></figure></div></div>
+</section>
 
 <section class="extras"><div class="in">
  <h2>And the rest of the kit</h2>
@@ -584,7 +584,7 @@ const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.class
 const tabs=[...document.querySelectorAll('.it')],views=[...document.querySelectorAll('.view')];
 function show(i){tabs.forEach((t,k)=>t.setAttribute('aria-selected',k===i));views.forEach((v,k)=>v.classList.toggle('on',k===i));}
 tabs.forEach((t,i)=>t.addEventListener('click',()=>{show(i);auto=false}));
-let auto=true,cur=0;setInterval(()=>{if(auto){cur=(cur+1)%tabs.length;show(cur)}},4200);
+let auto=tabs.length>0,cur=0;setInterval(()=>{if(auto){cur=(cur+1)%tabs.length;show(cur)}},4200);
 // currency toggle
 document.querySelectorAll('.toggle button').forEach(b=>b.addEventListener('click',()=>{
  document.querySelectorAll('.toggle button').forEach(x=>x.setAttribute('aria-pressed',x===b));
