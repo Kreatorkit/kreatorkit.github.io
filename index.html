@@ -335,6 +335,38 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
  @keyframes fl{50%{transform:translateX(-96px) translateY(-10px) rotate(-9deg) scale(.8)}}@keyframes fr{50%{transform:translateX(96px) translateY(-10px) rotate(9deg) scale(.8)}}}
 @media (max-width:520px){.fph.pl,.fph.pr{display:none}}
 @media (prefers-reduced-motion:reduce){.fph{animation:none!important}.fsc img,.fnote{animation:none!important}.fsc img:first-child,.fnote:first-child{opacity:1}}
+
+.hero{overflow-x:clip}
+/* ===== How it works: journey line (23 Nov) ===== */
+.jr-sub{color:var(--softv);font-weight:500;font-size:19px;margin:0 0 40px}
+.jr{color:var(--inkv);position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto}
+.jr-rail{position:absolute;left:16.6%;right:16.6%;top:150px;height:2px;background:var(--glass-b)}
+.jr-rail b{position:absolute;inset:0;background:var(--coral);transform-origin:left;transform:scaleX(0);animation:jrRail 9s cubic-bezier(.65,0,.35,1) infinite}
+.jr-rail u{position:absolute;top:-6px;left:0;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 6px rgba(217,87,63,.18);animation:jrDot 9s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes jrRail{0%,8%{transform:scaleX(0);opacity:1}38%,46%{transform:scaleX(.5)}76%,92%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+@keyframes jrDot{0%,8%{left:0;opacity:1}38%,46%{left:50%}76%,92%{left:100%;opacity:1}100%{left:100%;opacity:0}}
+.jr-st{display:flex;flex-direction:column;align-items:center;text-align:center}
+.jr-vis{height:130px;width:100%;display:flex;align-items:flex-end;justify-content:center;margin-bottom:46px}
+.jr-st h3{font-size:22px;margin:0 0 4px}.jr-st p{margin:0;color:var(--softv);font-size:15.5px;line-height:1.45;max-width:250px}
+.jr-n{font-weight:800;font-size:13px;color:var(--softv);margin-bottom:6px}
+.jr-page{width:120px;height:130px;border:1.5px solid var(--inkv);border-bottom:0;border-radius:16px 16px 0 0;padding:12px 10px;display:flex;flex-direction:column;gap:6px;background:var(--glass)}
+.jr-av{width:22px;height:22px;border-radius:50%;background:var(--coral);margin:0 auto 2px}
+.jr-page s{display:block;height:13px;border-radius:5px;background:color-mix(in srgb,var(--inkv) 10%,transparent);opacity:0;transform:translateY(-14px);animation:jrBlk 9s cubic-bezier(.16,1,.3,1) infinite}
+.jr-page s:nth-of-type(2){animation-delay:.25s}.jr-page s:nth-of-type(3){animation-delay:.5s;background:var(--inkv)}.jr-page s:nth-of-type(4){animation-delay:.75s}
+@keyframes jrBlk{0%{opacity:0;transform:translateY(-14px)}6%,92%{opacity:1;transform:none}100%{opacity:0}}
+.jr-bio{width:200px;border:1.5px solid var(--inkv);border-radius:16px;padding:12px;background:var(--glass);text-align:left;font-size:12px}
+.jr-h{display:flex;gap:8px;align-items:center;font-weight:800;font-size:13px;margin-bottom:6px}.jr-h i{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#F5B041,#D9573F,#8E44AD)}
+.jr-t{color:var(--softv);font-weight:600;margin-bottom:6px}
+.jr-lk{display:inline-block;font-weight:800;color:#2563EB;opacity:0;transform:translateY(-18px) scale(.9);animation:jrLk 9s cubic-bezier(.16,1,.3,1) infinite}
+@keyframes jrLk{0%,34%{opacity:0;transform:translateY(-18px) scale(.9)}42%,92%{opacity:1;transform:none}100%{opacity:0}}
+.jr-stack{display:flex;flex-direction:column;gap:6px;align-items:center}
+.jr-note{display:flex;align-items:center;gap:8px;background:var(--bgv);border:1px solid var(--glass-b);color:var(--inkv);border-radius:12px;padding:9px 12px;font-weight:700;font-size:13px;white-space:nowrap;
+ box-shadow:0 12px 24px -16px rgba(0,0,0,.4);opacity:0;transform:translateY(12px) scale(.95);animation:jrNt 9s cubic-bezier(.16,1,.3,1) infinite}
+.jr-note i{width:8px;height:8px;border-radius:50%;background:var(--coral);flex:none}.jr-note i.g{background:var(--sage)}.jr-note i.y{background:var(--mustard)}
+.jr-note:nth-child(1){animation-delay:6.6s}.jr-note:nth-child(2){animation-delay:7s}.jr-note:nth-child(3){animation-delay:7.4s}
+@keyframes jrNt{0%{opacity:0;transform:translateY(12px) scale(.95)}5%,20%{opacity:1;transform:none}25%,100%{opacity:0}}
+@media (max-width:760px){.jr{grid-template-columns:1fr;gap:44px}.jr-rail{display:none}.jr-vis{margin-bottom:16px}}
+@media (prefers-reduced-motion:reduce){.jr *{animation:none!important}.jr-page s,.jr-lk,.jr-note{opacity:1;transform:none}}
 </style></head><body>
 <div class="blobs" aria-hidden="true"><i class="bb1"></i><i class="bb2"></i><i class="bb3"></i></div>
 <div class="themebtn" role="group" aria-label="Look"><button type="button" data-t="light" aria-pressed="true">White</button><button type="button" data-t="dark" aria-pressed="false">Black</button></div>
@@ -365,15 +397,15 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
 
 <section class="how" id="how"><div class="in">
  <h2>Bio link in. Customers out.</h2>
- <div class="flow">
-  <div class="step"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
-   <h3>Make your page</h3><p>Start from an example. Add links, picks, a class or a course.</p></div>
-  <svg class="arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-  <div class="step"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
-   <h3>Put it in your bio</h3><p>Instagram, YouTube, anywhere. One link.</p></div>
-  <svg class="arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-  <div class="step"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1F1F23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-   <h3>Grow and earn</h3><p>Emails, class seats and sales. All yours, 0% taken.</p></div>
+ <p class="jr-sub">Three steps, one link.</p>
+ <div class="jr">
+  <div class="jr-rail" aria-hidden="true"><b></b><u></u></div>
+  <div class="jr-st"><div class="jr-vis" aria-hidden="true"><div class="jr-page"><div class="jr-av"></div><s></s><s></s><s></s><s></s></div></div>
+   <div class="jr-n">1</div><h3>Make your page</h3><p>Start from an example. Add links, picks, a class or a course.</p></div>
+  <div class="jr-st"><div class="jr-vis" aria-hidden="true"><div class="jr-bio"><div class="jr-h"><i></i>maya.makes</div><div class="jr-t">Editing tips for creators</div><span class="jr-lk">kreatorkit.app/maya</span></div></div>
+   <div class="jr-n">2</div><h3>Put it in your bio</h3><p>Instagram, YouTube, anywhere. One link.</p></div>
+  <div class="jr-st"><div class="jr-vis" aria-hidden="true"><div class="jr-stack"><div class="jr-note"><i class="g"></i>New email sign-up</div><div class="jr-note"><i class="y"></i>Seat saved for the class</div><div class="jr-note"><i></i>Sale, 0% taken</div></div></div>
+   <div class="jr-n">3</div><h3>Grow and earn</h3><p>Emails, class seats and sales. All yours, 0% taken.</p></div>
  </div>
 </div></section>
 
