@@ -508,6 +508,46 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
 .pp .btn{margin-top:auto;justify-content:center}
 @media (max-width:860px){.pps{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.pp li,.pw-dots i{opacity:1;transform:none;transition:none}}
+
+/* ===== FAQ: DM thread + final: bio swap (24 Nov) ===== */
+.dm2{text-align:center}
+.dm-ph{max-width:480px;margin:10px auto 0;border:1px solid var(--glass-b);border-radius:26px;overflow:hidden;background:var(--bgv);text-align:left;box-shadow:0 30px 60px -40px rgba(0,0,0,.5)}
+.dm-bar{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--glass-b);font-weight:800;color:var(--inkv)}
+.dm-bar i{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+.dm-bar small{display:block;font-weight:600;color:var(--softv);font-size:12px}
+.dm-th{height:400px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth;overscroll-behavior:contain}
+.dm-m{max-width:84%;padding:10px 14px;border-radius:18px;font-size:15px;line-height:1.5;animation:dmPop .35s cubic-bezier(.16,1,.3,1) both}
+.dm-m p{margin:0}
+.dm-me{align-self:flex-end;background:var(--inkv);color:var(--bgv);border-bottom-right-radius:5px;font-weight:600}
+.dm-us{align-self:flex-start;background:color-mix(in srgb,var(--inkv) 7%,var(--bgv));color:var(--inkv);border-bottom-left-radius:5px}
+.dm-typing{align-self:flex-start;background:color-mix(in srgb,var(--inkv) 7%,var(--bgv));border-radius:18px;padding:12px 14px;display:flex;gap:4px}
+.dm-typing i{width:7px;height:7px;border-radius:50%;background:var(--softv);animation:dmDot 1s infinite}.dm-typing i:nth-child(2){animation-delay:.15s}.dm-typing i:nth-child(3){animation-delay:.3s}
+@keyframes dmDot{50%{transform:translateY(-4px);opacity:.5}}
+@keyframes dmPop{from{opacity:0;transform:translateY(8px) scale(.97)}}
+.dm-ask{display:flex;gap:6px;overflow-x:auto;padding:12px;border-top:1px solid var(--glass-b);scrollbar-width:thin}
+.dm-ask button{all:unset;cursor:pointer;flex:none;border:1px solid var(--glass-b);border-radius:99px;padding:8px 12px;font-weight:700;font-size:13px;color:var(--inkv);transition:background .2s,opacity .3s}
+.dm-ask button:hover{background:color-mix(in srgb,var(--inkv) 7%,var(--bgv))}.dm-ask button:focus-visible{outline:3px solid var(--coral)}
+.dm-ask button[disabled]{opacity:.35;cursor:default}
+.fin2 .box{display:none}
+.fn{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;max-width:980px;margin:0 auto;text-align:left}
+.fn h2{margin:0 0 12px;font-size:clamp(38px,5vw,64px)}.fn p{color:var(--softv);font-weight:500;font-size:19px;margin:0 0 26px}
+.fn-bio{border:1px solid var(--glass-b);background:var(--bgv);border-radius:22px;padding:22px;box-shadow:0 30px 50px -34px rgba(0,0,0,.5);color:var(--inkv)}
+.fn-row{display:flex;gap:14px;align-items:center}.fn-pic{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,#F5B041,#D9573F,#8E44AD);padding:3px}
+.fn-pic i{display:block;width:100%;height:100%;border-radius:50%;background:color-mix(in srgb,var(--inkv) 8%,var(--bgv));border:3px solid var(--bgv)}
+.fn-nm{font-weight:800;font-size:16px}.fn-tx{color:var(--softv);font-size:14px;font-weight:500}
+.fn-lnk{margin-top:14px;height:24px;position:relative;overflow:hidden;font-weight:800;font-size:15px}
+.fn-lnk span{position:absolute;left:0;top:0;white-space:nowrap}
+.fn-old{color:var(--softv);text-decoration:line-through;animation:fnA 6s cubic-bezier(.16,1,.3,1) infinite}
+.fn-new{color:#2563EB;transform:translateY(100%);opacity:0;animation:fnB 6s cubic-bezier(.16,1,.3,1) infinite}
+html[data-theme="dark"] .fn-new{color:#7AA5FF}
+@keyframes fnA{0%,35%{transform:none;opacity:1}45%,95%{transform:translateY(-100%);opacity:0}100%{transform:none;opacity:1}}
+@keyframes fnB{0%,35%{transform:translateY(100%);opacity:0}45%,95%{transform:none;opacity:1}100%{transform:translateY(100%);opacity:0}}
+.fn-chips{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap;min-height:28px}
+.fn-chips b{font-size:12px;border-radius:99px;padding:6px 10px;background:color-mix(in srgb,var(--inkv) 7%,var(--bgv));color:var(--inkv);opacity:0;animation:fnC 6s cubic-bezier(.16,1,.3,1) infinite}
+.fn-chips b:nth-child(2){animation-delay:.15s}.fn-chips b:nth-child(3){animation-delay:.3s}
+@keyframes fnC{0%,45%{opacity:0;transform:translateY(6px)}52%,92%{opacity:1;transform:none}100%{opacity:0}}
+@media (max-width:760px){.fn{grid-template-columns:1fr}.dm-th{height:360px}}
+@media (prefers-reduced-motion:reduce){.fn-old{display:none}.fn-new,.fn-chips b{animation:none;opacity:1;transform:none}.dm-m,.dm-typing i{animation:none}}
 </style></head><body>
 <div class="blobs" aria-hidden="true"><i class="bb1"></i><i class="bb2"></i><i class="bb3"></i></div>
 <div class="themebtn" role="group" aria-label="Look"><button type="button" data-t="light" aria-pressed="true">White</button><button type="button" data-t="dark" aria-pressed="false">Black</button></div>
@@ -613,30 +653,20 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
  <div class="below">Add card or UPI autopay. Nothing is charged for 30 days. <span>Cancel before and pay nothing.</span></div>
 </div></section>
 
-<section class="faq" id="faq"><div class="in">
+<section class="faq dm2" id="faq"><div class="in">
  <h2>You asked. We answered.</h2>
- <div class="chat">
-  <div class="qq">Do you take a cut of my sales?</div>
-  <div class="aa">No. We take nothing from your sales. You pay a flat monthly plan, and buyers pay straight into your own payment account. The payment company's own fee (cards, UPI) applies, as it does everywhere.</div>
-  <div class="qq">Why do you ask for a card for a free trial?</div>
-  <div class="aa">So your founding price is locked and nothing stops on day 31. You see a reminder before the first charge, and you can cancel from your Plan page any time before it, for nothing.</div>
-  <div class="qq">When does Instagram comment to DM arrive?</div>
-  <div class="aa">It's built and waiting on Meta's approval for our app. We can't promise Meta's timing. Founding members get it at no extra cost the day it switches on.</div>
-  <div class="qq">Can I sell from India?</div>
-  <div class="aa">Selling works today with Stripe for creators outside India. UPI and Indian cards are next. Your pages, list, classes and scheduling work everywhere now.</div>
-  <div class="qq">What happens after 100 founding seats?</div>
-  <div class="aa">New creators pay the normal price (₹499 / ₹1,499). Founding members keep their price for as long as they stay subscribed.</div>
-  <div class="qq">Is my data safe?</div>
-  <div class="aa">We use the official Instagram, YouTube and payment APIs, store keys encrypted, and never sell data. You can delete everything from Settings.</div>
- </div>
+ <div class="dm-ph"><div class="dm-bar"><i aria-hidden="true">K</i><div>Kreatorkit<small>Tap a question below</small></div></div>
+  <div class="dm-th" id="dmth" aria-live="polite"></div>
+  <div class="dm-ask" id="dmask" aria-label="Questions"><button type="button" data-i="0">Do you take a cut of my sales?</button><button type="button" data-i="1">Why do you ask for a card for a free trial?</button><button type="button" data-i="2">When does Instagram comment to DM arrive?</button><button type="button" data-i="3">Can I sell from India?</button><button type="button" data-i="4">What happens after 100 founding seats?</button><button type="button" data-i="5">Is my data safe?</button></div></div>
+ <template data-q="0"><p>No. We take nothing from your sales. You pay a flat monthly plan, and buyers pay straight into your own payment account. The payment company's own fee (cards, UPI) applies, as it does everywhere.</p></template><template data-q="1"><p>So your founding price is locked and nothing stops on day 31. You see a reminder before the first charge, and you can cancel from your Plan page any time before it, for nothing.</p></template><template data-q="2"><p>It's built and waiting on Meta's approval for our app. We can't promise Meta's timing. Founding members get it at no extra cost the day it switches on.</p></template><template data-q="3"><p>Selling works today with Stripe for creators outside India. UPI and Indian cards are next. Your pages, list, classes and scheduling work everywhere now.</p></template><template data-q="4"><p>New creators pay the normal price (₹499 / ₹1,499). Founding members keep their price for as long as they stay subscribed.</p></template><template data-q="5"><p>We use the official Instagram, YouTube and payment APIs, store keys encrypted, and never sell data. You can delete everything from Settings.</p></template>
+ <noscript><dl><dt>Do you take a cut of my sales?</dt><dd>No. We take nothing from your sales. You pay a flat monthly plan, and buyers pay straight into your own payment account. The payment company's own fee (cards, UPI) applies, as it does everywhere.</dd><dt>Why do you ask for a card for a free trial?</dt><dd>So your founding price is locked and nothing stops on day 31. You see a reminder before the first charge, and you can cancel from your Plan page any time before it, for nothing.</dd><dt>When does Instagram comment to DM arrive?</dt><dd>It's built and waiting on Meta's approval for our app. We can't promise Meta's timing. Founding members get it at no extra cost the day it switches on.</dd><dt>Can I sell from India?</dt><dd>Selling works today with Stripe for creators outside India. UPI and Indian cards are next. Your pages, list, classes and scheduling work everywhere now.</dd><dt>What happens after 100 founding seats?</dt><dd>New creators pay the normal price (₹499 / ₹1,499). Founding members keep their price for as long as they stay subscribed.</dd><dt>Is my data safe?</dt><dd>We use the official Instagram, YouTube and payment APIs, store keys encrypted, and never sell data. You can delete everything from Settings.</dd></dl></noscript>
 </div></section>
 
-<section class="final" id="join"><div class="in">
- <div class="box">
-  <h2>Your bio link should pay you.</h2>
-  <p>Try every feature free for 30 days. Founding price for the first 100.</p>
-  <a class="btn main" href="https://app.kreatorkit.app/signup">Start free</a>
- </div>
+<section class="final fin2" id="join"><div class="in">
+ <div class="fn"><div><h2>Your bio link should pay you.</h2><p>Try every feature free for 30 days. Founding price for the first 100.</p><a class="btn main" href="https://app.kreatorkit.app/signup">Start free</a></div>
+  <div class="fn-bio" aria-hidden="true"><div class="fn-row"><div class="fn-pic"><i></i></div><div><div class="fn-nm">maya.makes</div><div class="fn-tx">Editing tips for creators</div></div></div>
+   <div class="fn-lnk"><span class="fn-old">a link that only lists links</span><span class="fn-new">kreatorkit.app/maya</span></div>
+   <div class="fn-chips"><b>Picks</b><b>Free class</b><b>Course, 0% taken</b></div></div></div>
 </div></section>
 
 <footer><div class="in">
@@ -696,4 +726,16 @@ document.querySelectorAll("section h2, .t, .plan, .step, .receipt, .tablewrap, .
  sec.querySelectorAll(".cc-y,.cc-soon").forEach((p,i)=>p.style.transitionDelay=(i*35)+"ms");
  if(!("IntersectionObserver" in window)){sec.classList.add("ccin");return;}
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){sec.classList.add("ccin");io.disconnect()}}),{threshold:.1}); io.observe(sec); })();
+</script><script>
+// FAQ as a DM thread: tap a question, we "type", the answer arrives. First answer plays when the section comes into view.
+(function(){ const th=document.getElementById("dmth"), ask=document.getElementById("dmask"); if(!th) return;
+ const A=i=>document.querySelector('template[data-q="'+i+'"]').innerHTML; let busy=false;
+ const down=()=>{th.scrollTop=th.scrollHeight};
+ function say(i){ if(busy) return; const b=ask.querySelector('[data-i="'+i+'"]'); if(b.disabled) return; busy=true; b.disabled=true;
+  th.insertAdjacentHTML("beforeend",'<div class="dm-m dm-me"></div>'); th.lastElementChild.textContent=b.textContent; down();
+  setTimeout(()=>{th.insertAdjacentHTML("beforeend",'<div class="dm-typing" aria-hidden="true"><i></i><i></i><i></i></div>'); down();},350);
+  setTimeout(()=>{const t=th.querySelector(".dm-typing"); if(t) t.remove(); th.insertAdjacentHTML("beforeend",'<div class="dm-m dm-us">'+A(i)+'</div>'); down(); busy=false;},1400); }
+ ask.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>say(+b.dataset.i)));
+ if(!("IntersectionObserver" in window)){say(0);return;}
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){say(0);io.disconnect()}}),{rootMargin:"0px 0px -25% 0px"}); io.observe(th); })();
 </script></body></html>
