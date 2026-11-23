@@ -480,6 +480,34 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
 .cc-y,.cc-soon{opacity:0;transform:scale(.6);transition:opacity .4s,transform .5s cubic-bezier(.16,1,.3,1)}
 .cmp2.ccin .cc-y,.cmp2.ccin .cc-soon{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.cc-y,.cc-soon{opacity:1;transform:none;transition:none}}
+
+/* ===== Pricing: seat wall + cards with sliding lists (24 Nov) ===== */
+.pr2{text-align:center}.pr2 .lead{margin:0 auto 26px}
+.pw{max-width:560px;margin:0 auto 30px}
+.pw-big{font-size:20px;font-weight:800;color:var(--inkv)}.pw-big b{font-size:40px;letter-spacing:-.03em;color:var(--coral)}
+.pw-dots{display:grid;grid-template-columns:repeat(20,1fr);gap:5px;margin-top:12px}
+.pw-dots i{aspect-ratio:1;border-radius:4px;background:var(--glass);border:1px solid var(--glass-b);transform:scale(.4);opacity:0;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .4s}
+.pw-dots i.t{background:var(--inkv);border-color:var(--inkv)}
+.pw.on .pw-dots i{transform:none;opacity:1}
+.pw small{display:block;color:var(--softv);font-weight:600;font-size:13px;margin-top:8px}
+.pps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1060px;margin:26px auto 0;text-align:left;align-items:stretch}
+.pp{border:1px solid var(--glass-b);background:var(--glass);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:16px;color:var(--inkv);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.pp:hover{transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(0,0,0,.45)}
+.pp-hot{border:2px solid var(--inkv)}
+.pp h3{margin:0;font-size:24px}.pp-who{color:var(--softv);font-weight:600;font-size:15px}
+.pp-p{font-size:44px;font-weight:800;letter-spacing:-.03em}.pp-p small{font-size:15px;color:var(--softv);font-weight:600;letter-spacing:0}
+.pp-was{font-size:13px;color:var(--softv);font-weight:600}
+.pp-rib{align-self:flex-start;font-weight:800;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:color-mix(in srgb,var(--coral) 14%,var(--bgv));color:var(--coral);border-radius:6px;padding:4px 8px}
+.pp-rib.pp-ghost{background:none}
+.pp ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:600}
+.pp li{display:flex;gap:10px;align-items:flex-start;padding:5px 8px;margin:0 -8px;border-radius:8px;opacity:0;transform:translateX(12px);transition:opacity .45s,transform .5s cubic-bezier(.16,1,.3,1),background .6s}
+.pp li::before{content:"";flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/11px no-repeat}
+.pp li.pp-x{color:var(--softv)}.pp li.pp-x::before{background:none;border:1.5px dashed var(--softv);opacity:.6}
+.pp.on li{opacity:1;transform:none}
+.pp.on li.pp-new{background:color-mix(in srgb,var(--sage) 13%,transparent)}
+.pp .btn{margin-top:auto;justify-content:center}
+@media (max-width:860px){.pps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.pp li,.pw-dots i{opacity:1;transform:none;transition:none}}
 </style></head><body>
 <div class="blobs" aria-hidden="true"><i class="bb1"></i><i class="bb2"></i><i class="bb3"></i></div>
 <div class="themebtn" role="group" aria-label="Look"><button type="button" data-t="light" aria-pressed="true">White</button><button type="button" data-t="dark" aria-pressed="false">Black</button></div>
@@ -568,40 +596,19 @@ footer{background:color-mix(in srgb,var(--inkv) 96%,transparent)!important}
  <div class="verify">Checked 22 Nov 2026 on linktr.ee/s/pricing (India prices, monthly), stan.store, beacons.ai, manychat.com/pricing (monthly) and topmate.io/fees. "Not checked" means we couldn't confirm it on their page.</div>
 </div></section>
 
-<section class="pricing" id="pricing"><div class="in">
+<section class="pricing pr2" id="pricing"><div class="in">
  <h2>Try it free for 30 days.</h2>
  <p class="lead">Founding price for the first 100 creators, locked for as long as you stay.</p>
- <div class="seats" id="seats" hidden><b id="seatsleft">100</b> of 100 founding seats left<i><b id="seatsbar" style="width:0%"></b></i></div>
+ <div class="pw" id="seats" hidden><div class="pw-big"><b id="seatsleft">100</b> of <span id="seatsof">100</span> founding seats left</div><div class="pw-dots" aria-hidden="true"></div><small>Each square is one founding seat.</small></div>
  <div class="toggle" role="group" aria-label="Currency"><button aria-pressed="true" data-cur="inr">₹ India</button><button aria-pressed="false" data-cur="usd">$ Everywhere else</button></div>
- <div class="plans">
-  <div class="plan"><div><h3>Free</h3><div class="who">To try it</div></div>
-   <div class="p price"><span data-inr="₹0" data-usd="$0">₹0</span></div>
-   <ul>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>2 pages, 5 smart links</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Email list up to 100 people</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free class sign-ups</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA48B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>5 scheduled posts a month</li>
-    <li style="color:var(--soft)">Small "Made with Kreatorkit" badge</li>
-   </ul><a class="btn line" href="https://app.kreatorkit.app/signup">Start free</a></div>
-  <div class="plan"><div><span class="ribbon">Founding price</span><h3 style="margin-top:12px">Creator</h3><div class="who">For your page, list and classes</div></div>
-   <div><div class="p price"><span data-inr="₹299" data-usd="$7">₹299</span> <small>/ month</small></div><div class="inr"><s data-inr="₹499" data-usd="$9">₹499</s> after the founding seats are gone</div></div>
-   <ul>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unlimited pages, picks and smart links</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unlimited email list + download</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free classes with calendar reminders</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unlimited YouTube scheduling + calendar</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full stats, no badge</li>
-    <li style="color:var(--soft)">Coming, free for you: Instagram comment to DM, follow gate, Instagram scheduling</li>
-   </ul><a class="btn main" href="https://app.kreatorkit.app/signup">Try free for 30 days</a></div>
-  <div class="plan hot"><div><span class="ribbon">Founding price</span><h3 style="margin-top:12px">Pro</h3><div class="who">For creators who sell</div></div>
-   <div><div class="p price"><span data-inr="₹999" data-usd="$19">₹999</span> <small>/ month</small></div><div class="inr"><s data-inr="₹1,499" data-usd="$29">₹1,499</s> after the founding seats are gone</div></div>
-   <ul>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Everything in Creator</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Sell files and courses, 0% commission</b></li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Private course pages with video lessons</li>
-    <li><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DE6B5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>API + AI tools (Claude, MCP)</li>
-    <li style="color:#CFC8BC">Coming: selling in India (UPI, cards)</li>
-   </ul><a class="btn main" href="https://app.kreatorkit.app/signup">Try free for 30 days</a></div>
+ <div class="pps">
+  <div class="pp"><span class="pp-rib pp-ghost">&nbsp;</span><div><h3>Free</h3><div class="pp-who">To try it</div></div>
+   <div><div class="pp-p price"><span data-inr="₹0" data-usd="$0">₹0</span></div><div class="pp-was">&nbsp;</div></div>
+   <ul><li class="">2 pages, 5 smart links</li><li class="">Email list up to 100 people</li><li class="">Free class sign-ups</li><li class="">5 scheduled posts a month</li><li class="pp-x">Small "Made with Kreatorkit" badge</li></ul><a class="btn line" href="https://app.kreatorkit.app/signup">Start free</a></div><div class="pp"><span class="pp-rib">Founding price</span><div><h3>Creator</h3><div class="pp-who">For your page, list and classes</div></div>
+   <div><div class="pp-p price"><span data-inr="₹299" data-usd="$7">₹299</span> <small>/ month</small></div><div class="pp-was"><s><span data-inr="₹499" data-usd="$9">₹499</span></s> after the founding seats are gone</div></div>
+   <ul><li class="pp-new">Unlimited pages, picks and smart links</li><li class="pp-new">Unlimited email list + download</li><li class="pp-new">Free classes with calendar reminders</li><li class="pp-new">Unlimited YouTube scheduling + calendar</li><li class="pp-new">Full stats, no badge</li><li class="pp-x">Coming, free for you: Instagram comment to DM, follow gate, Instagram scheduling</li></ul><a class="btn main" href="https://app.kreatorkit.app/signup">Try free for 30 days</a></div><div class="pp pp-hot"><span class="pp-rib">Founding price</span><div><h3>Pro</h3><div class="pp-who">For creators who sell</div></div>
+   <div><div class="pp-p price"><span data-inr="₹999" data-usd="$19">₹999</span> <small>/ month</small></div><div class="pp-was"><s><span data-inr="₹1,499" data-usd="$29">₹1,499</span></s> after the founding seats are gone</div></div>
+   <ul><li class="">Everything in Creator</li><li class="pp-new">Sell files and courses, 0% commission</li><li class="pp-new">Private course pages with video lessons</li><li class="pp-new">API + AI tools (Claude, MCP)</li><li class="pp-x">Coming: selling in India (UPI, cards)</li></ul><a class="btn main" href="https://app.kreatorkit.app/signup">Try free for 30 days</a></div>
  </div>
  <div class="below">Add card or UPI autopay. Nothing is charged for 30 days. <span>Cancel before and pay nothing.</span></div>
 </div></section>
@@ -658,12 +665,18 @@ try{ if(!(Intl.DateTimeFormat().resolvedOptions().timeZone||'').startsWith('Asia
  i.addEventListener('input',()=>{ const v=+i.value.replace(/[^0-9]/g,'')||0; i.value=v?v.toLocaleString('en-IN'):''; run(); });
  document.querySelectorAll('.calc .chips button').forEach(b=>b.onclick=()=>{ i.value=(+b.dataset.v).toLocaleString('en-IN'); run(); });
  run(); })();
-// live founding counter
+// live founding counter + seat wall
 fetch('https://app.kreatorkit.app/founding.json').then(r=>r.json()).then(j=>{
- if(typeof j.left!=='number')return; const s=document.getElementById('seats');
- document.getElementById('seatsleft').textContent=j.left; document.getElementById('seatsbar').style.width=(100*(j.of-j.left)/j.of)+'%';
- s.hidden=false; document.querySelectorAll('.seatline').forEach(e=>e.textContent=j.left+' of '+j.of+' founding seats left');
+ if(typeof j.left!=='number')return; const w=document.getElementById('seats');
+ document.getElementById('seatsleft').textContent=j.left; document.getElementById('seatsof').textContent=j.of;
+ const d=w.querySelector('.pw-dots'); d.innerHTML=Array.from({length:j.of},(_,i)=>'<i class="'+(i<j.of-j.left?'t':'')+'" style="transition-delay:'+(i*8)+'ms"></i>').join('');
+ w.hidden=false; document.querySelectorAll('.seatline').forEach(e=>e.textContent=j.left+' of '+j.of+' founding seats left');
 }).catch(()=>{});
+// pricing: cards' lists slide in when the section comes into view
+(function(){ const sec=document.querySelector('.pr2'); if(!sec) return;
+ const els=[...sec.querySelectorAll('.pw,.pp')]; sec.querySelectorAll('.pp').forEach((c,ci)=>c.querySelectorAll('li').forEach((l,k)=>l.style.transitionDelay=(ci*150+k*70)+'ms'));
+ if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('on'));return;}
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -18% 0px'}); els.forEach(e=>io.observe(e)); })();
 </script>
 <script>
 document.querySelectorAll(".themebtn button").forEach(b => b.onclick = () => { document.documentElement.dataset.theme = b.dataset.t;
