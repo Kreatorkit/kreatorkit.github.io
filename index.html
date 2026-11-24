@@ -1,9 +1,22 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kreatorkit: your link-in-bio that sells</title>
+<link rel="canonical" href="https://kreatorkit.app/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kreatorkit.app/">
+<meta property="og:site_name" content="Kreatorkit">
+<meta property="og:description" content="Link-in-bio pages, product picks, an email list, free classes and courses for creators. 0% commission on your sales. Free for 30 days.">
+<meta property="og:image" content="https://kreatorkit.app/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kreatorkit: your link-in-bio that sells. Example pages on three phones.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kreatorkit: your link-in-bio that sells">
+<meta name="twitter:description" content="Link-in-bio pages, product picks, an email list, free classes and courses for creators. 0% commission on your sales. Free for 30 days.">
+<meta name="twitter:image" content="https://kreatorkit.app/og.png">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Kreatorkit", "url": "https://kreatorkit.app", "logo": "https://kreatorkit.app/icon-192.png", "email": "kreatorkit.app@gmail.com"}, {"@context": "https://schema.org", "@type": "WebSite", "name": "Kreatorkit", "url": "https://kreatorkit.app"}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Kreatorkit", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://kreatorkit.app", "description": "Link-in-bio pages, product picks, an email list, free classes and courses for creators. 0% commission on your sales. Free for 30 days.", "image": "https://kreatorkit.app/og.png", "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "INR"}, {"@type": "Offer", "name": "Creator (founding price)", "price": "299", "priceCurrency": "INR"}, {"@type": "Offer", "name": "Pro (founding price)", "price": "999", "priceCurrency": "INR"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you take a cut of my sales?", "acceptedAnswer": {"@type": "Answer", "text": "No. We take nothing from your sales. You pay a flat monthly plan, and buyers pay straight into your own payment account. The payment company's own fee (cards, UPI) applies, as it does everywhere."}}, {"@type": "Question", "name": "Why do you ask for a card for a free trial?", "acceptedAnswer": {"@type": "Answer", "text": "So your founding price is locked and nothing stops on day 31. You see a reminder before the first charge, and you can cancel from your Plan page any time before it, for nothing."}}, {"@type": "Question", "name": "When does Instagram comment to DM arrive?", "acceptedAnswer": {"@type": "Answer", "text": "It's built and waiting on Meta's approval for our app. We can't promise Meta's timing. Founding members get it at no extra cost the day it switches on."}}, {"@type": "Question", "name": "Can I sell from India?", "acceptedAnswer": {"@type": "Answer", "text": "Selling works today with Stripe for creators outside India. UPI and Indian cards are next. Your pages, list, classes and scheduling work everywhere now."}}, {"@type": "Question", "name": "What happens after 100 founding seats?", "acceptedAnswer": {"@type": "Answer", "text": "New creators pay the normal price (₹499 / ₹1,499). Founding members keep their price for as long as they stay subscribed."}}, {"@type": "Question", "name": "Is my data safe?", "acceptedAnswer": {"@type": "Answer", "text": "We use the official Instagram, YouTube and payment APIs, store keys encrypted, and never sell data. You can delete everything from Settings."}}]}]</script>
 <link rel="icon" href="icon-192.png">
 <meta property="og:title" content="Kreatorkit: your link-in-bio that sells">
-<meta property="og:image" content="logo-dark.png">
 <meta name="description" content="Link-in-bio pages, picks, email list, free classes and courses for creators. 0% commission on your sales. Free for 30 days.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -629,7 +642,7 @@ html[data-theme="dark"] .fn-new{color:#7AA5FF}
 
 <header class="hero"><div class="in">
  <div>
-  <span class="badge4"><i></i>Early access · Pro free for life until 26 Nov</span>
+  <span class="badge4"><i></i><span class="earlyline">Early access · Pro free for life for the first 100 creators</span></span>
   <h1>Your link-in-bio that <em>sells</em>.</h1>
   <p class="lead">One page for everything you share: your links, your picks, your email list, your free classes and your courses. Kreatorkit takes 0% of what you sell.</p>
   <div class="ctas"><a class="btn main" href="https://app.kreatorkit.app/signup">Try it free for 30 days
@@ -771,6 +784,7 @@ fetch('https://app.kreatorkit.app/founding.json').then(r=>r.json()).then(j=>{
  if(typeof j.left!=='number')return; const w=document.getElementById('seats');
  document.getElementById('seatsleft').textContent=j.left; document.getElementById('seatsof').textContent=j.of;
  const d=w.querySelector('.pw-dots'); d.innerHTML=Array.from({length:j.of},(_,i)=>'<i class="'+(i<j.of-j.left?'t':'')+'" style="transition-delay:'+(i*8)+'ms"></i>').join('');
+ if(typeof j.early_left==='number'){ document.querySelectorAll('.earlyline').forEach(e=>e.textContent=j.early_left>0?('Early access · Pro free for life · '+j.early_left+' of '+j.early_of+' spots left'):'Early access is full. Founding price still open'); }
  w.hidden=false; document.querySelectorAll('.seatline').forEach(e=>e.textContent=j.left+' of '+j.of+' founding seats left');
 }).catch(()=>{});
 // pricing: cards' lists slide in when the section comes into view

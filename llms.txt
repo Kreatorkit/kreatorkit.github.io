@@ -1,0 +1,50 @@
+# Kreatorkit
+
+> A link-in-bio for creators that sells. One page for your links, product picks, email list, free classes and courses. Kreatorkit takes 0% of what you sell.
+
+Website: https://kreatorkit.app
+Sign up: https://app.kreatorkit.app/signup
+Contact: kreatorkit.app@gmail.com
+
+## What it does
+- Link-in-bio pages, made from ready examples (link in bio, shop my picks, free guide, sell a course, free class). Each page can use any of six looks.
+- Product picks: Amazon and YouTube links open in their own apps, not Instagram's browser.
+- Email list and a WhatsApp community button. Download your list any time.
+- Free class sign-ups with calendar reminders.
+- Sell files and courses with 0% commission. Buyers pay into the creator's own payment account (Stripe) and get a private download or course page.
+- Smart links that open the YouTube, Spotify or Amazon app, with tap stats by source and device.
+- Schedule YouTube videos and Shorts, with a calendar.
+- Works with AI tools through an API and MCP (for example from Claude).
+- Coming: Instagram comment to DM (built, waiting on Meta's approval) and selling in India with UPI and Indian cards.
+
+## Plans (per month)
+- Free: 2 pages, 5 smart links, email list up to 100 people, free class sign-ups, 5 scheduled posts a month, small "Made with Kreatorkit" badge.
+- Creator: Rs 299 founding price (Rs 499 after the founding seats), or $7 ($9). Unlimited pages, picks, links, list and YouTube scheduling, calendar reminders, full stats, no badge.
+- Pro: Rs 999 founding price (Rs 1,499 after), or $19 ($29). Everything in Creator, plus selling files and courses at 0% commission, private course pages and the API/AI tools.
+- Every paid plan has a 30-day free trial. The first 100 creators who sign up get Pro free for life (early access).
+
+## FAQ
+
+### Do you take a cut of my sales?
+No. We take nothing from your sales. You pay a flat monthly plan, and buyers pay straight into your own payment account. The payment company's own fee (cards, UPI) applies, as it does everywhere.
+
+### Why do you ask for a card for a free trial?
+So your founding price is locked and nothing stops on day 31. You see a reminder before the first charge, and you can cancel from your Plan page any time before it, for nothing.
+
+### When does Instagram comment to DM arrive?
+It's built and waiting on Meta's approval for our app. We can't promise Meta's timing. Founding members get it at no extra cost the day it switches on.
+
+### Can I sell from India?
+Selling works today with Stripe for creators outside India. UPI and Indian cards are next. Your pages, list, classes and scheduling work everywhere now.
+
+### What happens after 100 founding seats?
+New creators pay the normal price (₹499 / ₹1,499). Founding members keep their price for as long as they stay subscribed.
+
+### Is my data safe?
+We use the official Instagram, YouTube and payment APIs, store keys encrypted, and never sell data. You can delete everything from Settings.
+
+## Pages
+- [Home](https://kreatorkit.app/)
+- [Privacy Policy](https://kreatorkit.app/privacy.html)
+- [Terms](https://kreatorkit.app/terms.html)
+- [Data deletion](https://kreatorkit.app/data-deletion.html)
